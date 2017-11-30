@@ -1,0 +1,107 @@
+
+/*type selector*/
+/*p {
+	background-color: yellow;
+}
+*/
+/* ID Selectors */
+/*#para1 {
+	background-color: red;
+}
+*/
+/* Class Selector */
+/*.paragraph {
+	background-color: orange;
+}*/
+
+/* Attribute Selector */
+/*a[target] {
+	color: green;	
+}*/
+/*Attribute with value selector*/
+/*a[target="top"] {
+	color: orange;
+}
+* {
+	background-color: green;
+}*/
+
+/*Adjacent Sibling*/
+/*h5 + a {
+	background-color: red;
+}
+a + br + a {
+	background-color: green;
+}*/
+
+/*General Sibling Combinator*/
+/*h5 ~ a {
+	background-color: fuchsia;
+}*/
+
+/*Child Selector Combinator*/
+/*div > a {
+	background-color: blue;
+}*/
+
+
+/*pseudo-class*/
+a:link {
+	color: green;
+	background-color: black;
+}
+a:visited {
+	color: yellow;
+	background-color: blue;
+}
+a:focus {
+	color: lightblue;
+	background-color: pink;
+}
+a:hover {
+	color: pink;
+	background-color: violet;
+}
+a:active {
+	color: grey;
+	background-color: cyan;
+}
+
+
+
+/* :first-child and last-child*/
+/*li:first-child {
+	background-color: pink;
+	color: green;
+}
+li:nth-child(5) {
+	background-color: black;
+	color: yellow;
+}
+p:first-child,
+p:last-child {
+	background-color: blue;
+	color: cyan;
+}*/
+
+/* Even and Odd Child*/
+/*li:nth-child(odd),
+p:nth-child(odd) {
+	background-color: cyan;
+	color: violet;
+}*/
+
+/*
+h5,
+h3,
+p,
+li,
+a:visited {
+	background-color: black;
+	color: cyan;	
+}*/
+
+p {
+	background-color: black;
+	color: yellow;
+}
