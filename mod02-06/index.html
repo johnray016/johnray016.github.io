@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>DOM Activity 3 with CSS</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Rock+Salt" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://use.fontawesome.com/b20718abdb.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header><h1>Menstagram</h1></header>
+		<main>
+			<!-- dashboard -->
+			<section id="mainDashboard">
+				<div class="dashColumns">
+					<h3><i class="fa fa-home"></i> Dashboard</h3>
+				</div>
+				<div class="dashColumns">
+					<div id="postCircle">
+						<i class="fa fa-file-text-o fa-2x"></i>
+					</div>
+					<div class="inline-block">
+						<p>5</p>
+						<p>posts</p>
+					</div>
+				</div>
+				<div class="dashColumns">
+					<div id="imageCircle">
+						<i class="fa fa-picture-o fa-2x"></i>
+					</div>
+					<div class="inline-block">
+						<p>13</p>
+						<p>images</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- new post -->
+			<section>
+				<h3><i class="fa fa-plus-circle"></i> New Post</h3>
+				<form method="post" action="">
+					<input type="text" name="text" placeholder="Enter your post title" id="enterTitle">
+					<br>
+					<textarea id="postContent" placeholder="Enter your content here"></textarea>
+					<br>
+					<input type="submit" name="publish" value="Publish" id="publishBtn" class="btn btn-blue">
+				</form>
+			</section>
+
+			<!-- upload images -->
+			<section>
+				<h3><i class="fa fa-cloud-upload"></i> Upload Image</h3>
+				<form method="post" action="">
+				<div class="img-set-holder">
+					<a href=""><img class="img-set" src="https://www.lorempixel.com/140/140" alt=""></a>
+					<a href=""><img class="img-set" src="https://www.lorempixel.com/140/140" alt=""></a>
+					<a href=""><img class="img-set" src="https://www.lorempixel.com/140/140" alt=""></a>
+					<a href=""><img class="img-set" src="https://www.lorempixel.com/140/140" alt=""></a>
+					<a href=""><img class="img-set" src="https://www.lorempixel.com/140/140" alt=""></a>
+				</div>				
+				<label for="photo" class="btn btn-blue"><i class="fa fa-file-image-o"></i> Browse</label><input type="file" name="photo" id="photo" hidden>
+				<button class="btn btn-green"><i class="fa fa-upload"></i> Upload</button>
+				</form>
+			</section>
+		</main>
+		<footer>
+			<span>Menstagram &copy; 2017</span>
+		</footer>
+	</div>	
+	
+</body>
+</html>	
