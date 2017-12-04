@@ -1,0 +1,297 @@
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Barlow', sans-serif;
+}
+body	{
+	background-color: lightgrey;
+	background-image: url('../img/background.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #EBF0F9;
+}
+div	{
+	/*padding: 20px;*/
+}
+
+.grandparent {
+	background-color: #fff;
+	width: inherit;
+	position: fixed;
+	bottom: 0;
+}
+
+.parent {
+	background-color: pink;
+	width: 100%;
+	position: relative;
+}
+
+p {
+	position: static;
+	/*margin-left: 50px;*/
+}
+
+input[name="submit"] {
+	margin-left: 20px;
+}
+strong	{
+	background-color: yellow;
+	/*position: absolute;*/
+	left: 10px;
+	top: 10px;
+}
+
+h1	{
+	background-color: grey;
+	padding: 10px;
+	position: fixed;
+	z-index: 1;
+	width: inherit;
+}
+/*p {
+	height: 1000px;
+	background-color: #efefef;
+	top: 70px;
+}*/
+
+main.wrapper > p {
+	height: 1000px;
+	background-color: #efefef;
+	position: relative;
+}
+
+/*
+*
+PAGE 3 CSS
+*
+*/
+
+/*div	{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000;
+	position: absolute;*/
+}
+.blue {
+	background-color: blue;
+	top: 20px;
+	left: 20px;
+	z-index: 1;
+}
+
+.yellow {
+	background-color: yellow;
+	top: 40px;
+	left: 40px;
+	z-index: 0;
+}
+
+.orange {
+	background-color: orange;
+	top: 60px;
+	left: 60px;
+	z-index: 2;
+}
+
+/*
+*
+* Page 4 CSS Rules
+*
+*/
+
+/*main.wrapper div {
+	padding: 0;
+	margin: 0;
+}*/
+
+.menu {
+	height: 100px;
+	background-color: #fff; /* Blue */
+	width: 100%;
+}
+.sidebar {
+	width: 20%;
+	height: 300px;
+	background-color: rgb(140, 181, 247, 0.5); /* Red */
+	width: 200px;
+	margin: 0 auto;
+	float: left;
+	height: 100%;
+}
+/*
+*
+* Content
+*
+*/
+.content {
+	width: 80%;
+	background-color: #b8b9ba; /* Yellow */
+	float: right;
+	padding: 20px;
+}
+.article-image {
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+div.content > p {
+	margin-bottom: 10px;
+	text-align: justify;
+}
+.footer {
+	/*height: 200px;*/
+	background-color: #d9e9fe; /* Light Blue */
+	clear: both;
+}
+.page {
+	border: 1px solid red;
+}
+
+/*
+*
+* Best way to clear floats
+*
+*/
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*
+*
+* Columns
+*
+*/
+
+.column {
+	background-color: #b2d6ff;
+	width: 31%;
+	height: 160px;
+	margin: 20px 1.16%;
+	border: 1px solid red;
+	float: left;
+	padding: 15px;
+	position: relative;
+}
+
+.avatar {
+	background-color: #d639fe;
+	width: 60px;
+	height: 60px;
+	float: left;
+	border-radius: 50%;
+	margin-right: 25px;
+	/*background-image: url('http://lorempixel.com/60/60');*/
+}
+.naruto {
+	background-image: url('../img/naruto.png');
+	background-size: contain;
+}
+.lupin {
+	background-image: url('../img/lupin.jpg');
+	background-size: contain;
+}
+.sakuragi {
+	background-image: url('../img/sakuragi.jpg');
+	background-size: contain;
+}
+.recca {
+	background-image: url('../img/recca.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.goku {
+	background-image: url('../img/goku.jpg');
+	background-size: contain;
+}
+.teepei {
+	background-image: url('../img/tp.jpg');
+	background-size: contain;
+}
+.username {
+	margin-bottom: 15px;
+}
+
+
+/*
+*
+* Managing text-overflow with multiline support
+*
+*/
+
+.block-with-text {
+	overflow: hidden;
+	position: relative;
+	line-height: 1.2em;
+	max-height: 3.6em;
+	text-align: left;
+	margin-right: -1em;
+	padding-right: 30px;
+}
+.block-with-text:before {
+	content: "...";
+	position: absolute;
+	right: 58px;
+	bottom: 0;
+}
+.block-with-text:after {
+	content: "";
+	position: absolute;
+	right: 58px;
+	width: 1em;
+	height: 1em;
+	margin-top: 0.2em;
+	background-color: #bd26ff;
+}
+.read-more {
+	float: right;
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
+}
+.nav-col {
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+.menu ul {	
+	float: right;
+	line-height: 90px;
+	margin-right: 50px;
+}
+.menu ul li {
+	display: inline-block;
+}
+.menu a {
+	text-decoration: none;
+	color: black;
+	padding: 20px;
+	font-weight: 700;
+}
+.menu a:hover {
+	color: blue;
+}
+.logo {
+	height: 90px;
+}
+
+h2 {	
+text-align: center;
+margin-bottom: 30px;
+margin-top: 10px;
+}
+
+.sidebar {
+	padding: 5px;
+}
