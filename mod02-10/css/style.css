@@ -1,0 +1,83 @@
+/* CSS Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: lightgrey;
+}
+
+.wrapper {
+	background-color: #fff;
+	width: 80%;
+	margin: 0 auto;
+}
+/*
+*
+* Block Types
+*
+*/
+h1,
+p {
+	background-color: lightblue;
+}
+
+h1	{
+	padding: 50px;
+	border: 1px solid #5d6063;
+}
+
+p {
+	padding: 20px 0 20px 10px;
+	margin-bottom: 50px;
+}
+
+/*
+*
+* inline-text;
+*
+*/
+
+em,
+strong {
+	background-color: yellow;
+	display: inline;
+}
+
+/*strong {
+	padding: 50px;
+	margin: 50px;
+}*/
+
+/*
+*
+* Generic Boxes (div)
+*
+*/
+
+/* Block Type Container */
+div	{
+	background-color: skyblue;
+	padding: 20px;
+	text-align: center;
+	border: 5px solid #5D6063;
+	border-radius: 5px;
+	width: 50%;
+	margin-top: 20px;
+}
+/* Inline type container */
+span {
+	font-size: 2em;
+	color: red;
+}
+
+button {
+	padding: 20px 30px;
+	border: 1px solid #000;
+	background-color: blue;
+	color: white;
+	border-radius: 5px;
+	margin: 0 auto;
+	display: block;
+}
