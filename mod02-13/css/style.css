@@ -1,0 +1,94 @@
+/* resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+header {
+	width: 20%;
+	background-color: #fff;
+	float: left;
+	text-align: center;
+	padding: 40px;
+	position: fixed;
+	left: 0;
+}
+header > div.logo {
+	height: 149.63px;
+	width: 100%;
+	background-color: lightgrey;
+	margin-bottom: 20px;
+}
+header > nav> ul > a> li {
+	list-style: none;
+	margin: 3px auto;
+	background-color: lightblue;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+header > nav > ul > a {
+	text-decoration: none;
+	color: #000;
+}
+
+/* main */
+
+
+main > section#home {
+	width: 80%;
+	background-color: cyan;
+	float: right;
+	border: 1px grey;
+	height: 800px;
+	text-align: center;
+	position: relative;
+}
+
+main > section#home > div.header {	
+	border:5px solid #fff;
+	width: 500px;
+	height: 200px;
+	padding-left: 80px;
+	padding-right: 80px;
+	margin: 0 auto;
+	display: table;
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+ 	 flex-direction: column;
+  justify-content: center;
+}
+h1 {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+main > section#about,
+main > section#services,
+main > section#projects,
+main > section#gallery {
+	height: 500px;	
+	width: 80%;
+	float: right;
+}
+main > section#about {
+	background-color: blue;
+}
+main > section#services {
+	background-color: red;
+}
+main > section#projects {
+	background-color: pink;
+}
+main > section#gallery {
+	background-color: orange;
+}
