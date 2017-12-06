@@ -11,51 +11,77 @@
 }
 header {
 	width: 20%;
-	background-color: #fff;
+	background-color: #1b1b1b;
 	float: left;
 	text-align: center;
 	padding: 40px;
 	position: fixed;
 	left: 0;
+	height: 100%;
+}
+header > img {
+	position: fixed;
+	left: 0;
+	width: 20%;
+	bottom: 70px;
 }
 header > div.logo {
 	height: 149.63px;
 	width: 100%;
-	background-color: lightgrey;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
+}
+header > div.logo > img {
+	position: fixed;
+	width: 13%;
+	top: 30px;
+	left: 45px;
+
 }
 header > nav> ul > a> li {
 	list-style: none;
-	margin: 3px auto;
-	background-color: lightblue;
+	margin: 5px auto;
+	background-color: #424242;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	color: #efefef;
+}
+header > nav> ul > a> li:hover {
+	background-color: #6d6d6d;
+	color: #fff;
 }
 
 header > nav > ul > a {
 	text-decoration: none;
 	color: #000;
+	font-family: 'Permanent Marker', cursive;
+	text-shadow: 3px 3px 5px #000;
 }
 
 /* main */
 
-
+main {
+	font-family: 'Ubuntu', sans-serif;
+}
 main > section#home {
 	width: 80%;
 	background-color: cyan;
 	float: right;
 	border: 1px grey;
-	height: 800px;
+	height: 940px;
 	text-align: center;
 	position: relative;
+	background-image: url('../img/background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 main > section#home > div.header {	
 	border:5px solid #fff;
 	width: 500px;
 	height: 200px;
-	padding-left: 80px;
-	padding-right: 80px;
+	padding-left: 20px;
+	padding-right: 20px;
 	margin: 0 auto;
 	display: table;
 	position: absolute;
@@ -64,13 +90,21 @@ main > section#home > div.header {
     transform: translate(-50%,-50%);
     display: flex;
     align-items: center;
- 	 flex-direction: column;
-  justify-content: center;
+ 	flex-direction: column;
+  	justify-content: center;
+  	background-color: rgba(145, 145, 145, 0.5);
 }
-h1 {
-	font-size: 2em;
+main > section#home > div.header > h1 {
+	font-size: 3em;
 	margin-bottom: 10px;
+	color: #fff;
+	text-shadow: 3px 3px 5px #000;
 }
+main > section#home > div.header > p {
+	color: #fff;
+	text-shadow: 3px 3px 5px #000;
+}
+
 
 main > section#about,
 main > section#services,
@@ -82,6 +116,10 @@ main > section#gallery {
 }
 main > section#about {
 	background-color: blue;
+	background-image: url('../img/about.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 main > section#services {
 	background-color: red;
@@ -91,4 +129,21 @@ main > section#projects {
 }
 main > section#gallery {
 	background-color: orange;
+}
+
+
+#toggleIcon,
+#toggleIcon1 {
+	background-color: red;
+	position: fixed;
+	top: 0;
+	left: 200px;
+	padding: 15px;
+	z-index: 111;
+	color: white;
+	font-size: 2em;
+}
+
+#toggleIcon1 {
+	left: 300px;
 }
