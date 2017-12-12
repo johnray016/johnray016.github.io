@@ -8,7 +8,16 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-body p {
+
+
+
+/*-------------------------------*/
+/*            General            */
+/*-------------------------------*/
+
+
+body p,
+body li {
 	font-size: 1.2em;
 }
 
@@ -27,7 +36,7 @@ body p {
     text-align: center;
     line-height: 30px;
     background: rgba(0, 0, 0, 0.5);
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);/* White */
     cursor: pointer;
     border: 0;
     border-radius: 50%;
@@ -36,13 +45,10 @@ body p {
     opacity: 0;
 }
 #back-to-top:hover {
-    background: #f0ad4e;
+    background: #f0ad4e; /* Orange */
 }
 #back-to-top.show {
     opacity: 1;
-}
-i.fa-arrow-up {
-	color: 
 }
 
 
@@ -66,11 +72,10 @@ header {
 }
 header.jumbotron h1,
 header.jumbotron p {
-  	color: #f4f4f4;
+  	color: #f4f4f4; /* White */
   	text-shadow: 0.5px 0.5px 10px #5e5e5e;
 }
 header.jumbotron h1 {
-  	padding-top: 100px; /* remove this to padding center text */
   	font-family: 'Devonshire', cursive;
   	font-size: 5em;
 }
@@ -100,19 +105,18 @@ section#down-arrow i {
   	border: 0;
 }
 .navbar-nav {
-	margin: 5px -15px;
+	margin: 5px -5px;
 }
-
 .navbar-inverse .navbar-nav > li > a {
-	color: #f4f4f4;
- 	font-size: 1.5em;
+	color: #f4f4f4; /* White */
+ 	font-size: 1em;
   	padding: 10px;
 	font-family: 'Oswald', sans-serif;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-	color: #f46f25;
+	color: #f46f25; /* Dark Orange*/
 }
 .navbar-brand {
   	padding: 0px;
@@ -130,29 +134,54 @@ section#down-arrow i {
 /*-------------------------------*/
 main {
 	font-family: 'Lato', sans-serif;
-	color: #333333;
+	color: #333333; /* Black Text */
 }
 main h3,
 main h2 {
 	font-weight: 400; 
+	color: #333333; /* Black Text */
 
 }
-main p {
+main p,
+main li {
 	font-weight: 300; 
 }
 
 
 /*-------------------------------*/
-/*           ID = Museum         */
+/*       Section =  Museum       */
 /*-------------------------------*/
 section#museum {
-	color: 333333;
+	color: #333333;
+}
+section#museum h3 { 
+    overflow: hidden;
+}
+
+section#museum h3:before,
+section#museum h3:after {
+    background-color: #f0ad4e; /* Orange */
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+section#museum h3:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+section#museum h3:after {
+    left: 0.5em;
+    margin-right: -50%;
 }
 
 
 
 /*-------------------------------*/
-/*        ID = Pinto Cafe        */
+/*     Section = Pinto Cafe      */
 /*-------------------------------*/
 
 .thumbnail {
@@ -170,11 +199,11 @@ section#museum {
 .caption h3 {
 	font-size: 2em;
 }
-/*-------------------------------*/
-/*  ID = Testimonials and Events */
-/*-------------------------------*/
+/*------------------------------------*/
+/*  Section = Testimonials and Events */
+/*------------------------------------*/
 section#testimonials h2 {
-	color: #333333;
+	color: #333333; /* Black Text */
 }
 
 div.col-lg-8 {
@@ -217,18 +246,18 @@ div.carousel-inner p {
 	font-style: italic;
 }
 ol.carousel-indicators li.active {
-	background-color: #f0ad4e;
+	background-color: #f0ad4e; /* Orange */
 }
 ol.carousel-indicators li {
-	border-color: #f0ad4e;
+	border-color: #f0ad4e; /* Orange */
 }
 
 .panel-warning > .panel-heading {
-	background-color: #f0ad4e;
-	border-color: #f0ad4e;
+	background-color: #f0ad4e; /* Orange */
+	border-color: #f0ad4e; /* Orange */
 }
 .panel-warning  {
-	border-color: #f0ad4e;
+	border-color: #f0ad4e; /* Orange */
 }
 .panel-body {
 	padding-bottom: 0;
@@ -236,51 +265,239 @@ ol.carousel-indicators li {
 
 
 /*-------------------------------*/
+/*      Section = Contact        */
+/*-------------------------------*/
+section#contact {
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+section#contact h2 {
+	color:  #f0ad4e; /*Orange*/
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+
+section#contact i {
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #f0ad4e; /* Orange */
+}
+section#contact strong {
+	color: #f0ad4e; /* Orange */
+}
+section#contact span{
+	font-family: 'Lato', sans-serif;
+	color: #333333; /* Black Text */
+}
+
+nav.pintoPages {
+	background-color: #323334; /* Black Background */
+}
+
+div#map > iframe {
+	width: 450px;
+	height: 450px;
+	border: none;
+	margin-bottom: 10px;
+}
+
+section#contact h3	{
+	color: #f46f25; /*Dark Orange*/
+}
+section#contact ul li {
+	list-style: none;
+}
+section#contact h4 > li {
+	font-weight: none;
+}
+
+section#contact div.well {
+	padding: 30px;
+	margin: 5px;
+}
+
+/*-------------------------------*/
+/*       Section = About         */
+/*-------------------------------*/
+section#about {
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+section#about h2 {
+	color:  #f0ad4e; /*Orange*/
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+section#about figure img {
+	margin-bottom: 0;
+}
+section#about figure > figcaption {
+	margin: 0;
+	font-style: italic;
+	font-size: 0.8em;
+	margin-bottom: 20px;
+}
+
+section#about figure > figcaption > a {
+	color: #f0ad4e; /*Orange*/
+}
+
+section#about span { 
+    overflow: hidden;
+}
+
+section#about span:before,
+section#about span:after {
+    background-color: #f0ad4e; /* Orange */
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 45%;
+}
+
+section#about span:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+section#about span:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+section#about div.row:nth-child(1) {
+	margin-top: 20px;
+}
+
+section#about div.row:nth-child(1) p,
+section#about div.row:nth-child(3) p {
+	text-align: justify;
+}
+
+section#about div.row:nth-child(2) {
+	margin: 20px auto;
+}
+
+section#about div.row:nth-child(2) i {
+	color: #f0ad4e; /* Orange */
+}
+
+section#about div.row:nth-child(3) li {
+	list-style: none;
+}
+
+section#about div.row:nth-child(3) div.well {
+	background-color: rgba(240, 173, 78, 0.3); /* Orange */
+	border:1px solid #f0ad4e; /* Orange */
+}
+section#about div.row:nth-child(3) div.well > h3 > i:nth-child(1) {
+	color: #f46f25; /* Dark Orange */
+}
+section#about div.row:nth-child(3) div.well i {
+	color: #f0ad4e; /* Orange */
+}
+
+/*-------------------------------*/
+/*       Section = Events        */
+/*-------------------------------*/
+section#events {
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+section#events h2 {
+	color:  #f0ad4e;
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+section#events h4 {
+	color: #f46f25; /* Dark Orange*/
+}
+section#events div.well > span {
+	background-color: rgba(240, 173, 78, 0.3); /* Orange */
+	border:1px solid #f0ad4e; /* Orange */
+	font-weight: 300;
+	border-radius: 5px;
+}
+
+/*-------------------------------*/
+/*      section = disclaimer     */
+/*-------------------------------*/
+section#disclaimer {
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 600px;
+}
+section#disclaimer h2 {
+	color:  #f0ad4e;
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+
+/*-------------------------------*/
 /*             Footer            */
 /*-------------------------------*/
 
 footer {
-	background-color: #323334;
-	color: #f4f4f4;
+	background-color: #323334; /* Black Background */
+	color: #7a736b; /* Dark Brown */
 	padding: 10px;
 	font-size: 0.8em;
 }
 
-footer div.col-lg-9 {
+footer h4 {
+	font-weight: bold;
+	color: #f4f4f4; /* White */
+}
+footer a {
 	color: #7a736b;
 }
 
-footer h4 {
-	font-weight: bold;
-	color: #f4f4f4;
-}
-footer a {
-	color: #f4f4f4;
-}
-
 footer a:hover {
-	color: #f0ad4e;
+	color: #f4f4f4; /* White */
 	text-decoration: none;
 }
 
 footer i {
-	padding-right: 0 20px;	
 	color: #7a736b;
 	margin-right: 1em;
 }
 footer i:hover {
-	color: #f4f4f4;
+	color: #f4f4f4; /* White */
+}
+
+footer #newsletter {
+	margin-bottom: 20px;
+}
+footer div.col-lg-12 {
+	margin-top: 30px;
+}
+
+footer a > h4 {
+	font-weight: bold;
+	color: #7a736b; /* Dark Brown */
+	margin-top: 20px;
+}
+footer a > h4:hover {
+	color: #f4f4f4; /* White */
 }
 
 /*-------------------------------*/
 /*     Mobile & Smartphones      */
 /*-------------------------------*/
 @media only screen and (max-width: 480px) {
+	body p {
+		font-size: 1em;
+	}
 	section#pinto-cafe img {
 		height: 60vh;
 	}
 	.caption {
-    top: 10%;
+    	top: 10%;
 	}
 
 	div.col-lg-4,
@@ -288,17 +505,46 @@ footer i:hover {
 		width: 100%;
 		margin: 0;
 	}
+
+	footer {
+		text-align: center;
+	}
+	footer i {
+		margin: 0 10px;
+	}
+	.navbar-inverse .navbar-nav > li {
+		background-color: #323334; /* Black Background */
+	}
+	.navbar-nav {
+		margin: 0 -15px;
+	}
+
+	section#about span:before,
+	section#about span:after {
+	    width: 30%;
+	}
+
+	section#about span:before {
+	    right: 0.5em;
+	    margin-left: -20%;
+	}
+	section#about span:after {
+	    left: 0.5em;
+	    margin-right: -20%;
+	}	
+
+
 }
 
 /*-------------------------------*/
 /*            Tablet             */
 /*-------------------------------*/
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 481px) and (max-width: 767px) {
 	body p {
 		font-size: 1em;
 	}
 	.navbar-inverse .navbar-nav > li {
-		background-color: #323334;
+		background-color: #323334; /* Black Background */
 	}
 	.navbar-inverse .navbar-nav > li > a {
  		font-size: 1em;
@@ -323,13 +569,39 @@ footer i:hover {
 		margin: 0;
 		margin-bottom: 1em;
 	}
+	
+	section#about span:before,
+	section#about span:after {
+	    width: 40%;
+	}
+
+	section#about span:before {
+	    right: 0.5em;
+	    margin-left: -30%;
+	}
+	section#about span:after {
+	    left: 0.5em;
+	    margin-right: -30%;
+	}	
 }
 
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+	footer {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 989px){
+	.navbar-inverse .navbar-nav > li > a {
+		padding: 10px 5px 5px;
+		font-size: 1.2em;
+	}
+}
 /*-------------------------------*/
 /*        Desktop & PC's         */
 /*-------------------------------*/
 @media only screen and (min-width: 1200px) {
-	main > div.container {
+	div.container {
 		width: 960px;
 	}
 }

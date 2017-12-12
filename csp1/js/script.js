@@ -1,19 +1,19 @@
-// Changing navigation background-color when scroll
-
 $(document).ready(function(){
+  /* Changing navigation background-color when scroll  */
   $(window).scroll(function(){
   	var scroll = $(window).scrollTop();
 	  if (scroll > 430) {
-	    $(".navbar").css("background" , "#323334");
+	    $(".pintoMain").css("background" , "#323334");
 	  }
 
 	  else{
-		  $(".navbar").css("background" , "transparent");  	
+		  $(".pintoMain").css("background" , "transparent");  	
 	  }
   })
 
+  /* Back top top button when scroll */
   if ($('#back-to-top').length) {
-    var scrollTrigger = 400, // px
+    var scrollTrigger = 400,
         backToTop = function () {
             var scrollTop = $(window).scrollTop();
             if (scrollTop > scrollTrigger) {
@@ -32,6 +32,6 @@ $(document).ready(function(){
             scrollTop: 0
         }, 700);
     });
-}
+    }
 })
 
