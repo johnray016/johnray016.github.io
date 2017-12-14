@@ -4,13 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>Pinto Art Museum</title>
+	<title>Contact | Pinto Art Museum</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 	<!-- Import Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Devonshire|Lato:300,400,700" rel="stylesheet">
 	<!-- Import Fontawesome -->
 	<script src="https://use.fontawesome.com/b20718abdb.js"></script>
+	<!-- Import Animate CSS -->
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<!-- Import Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<!-- Import Custom Stylesheets -->
@@ -48,7 +50,7 @@
 			            	<a href="gallery.html">GALLERY</a>
 			            </li>
 			            <li>
-			            	<a href="pinto-cafe.html">PINTO CAFE</a>
+			            	<a href="pintocafe.html">PINTO CAFE</a>
 			            </li>
 			            <li>
 			            	<a href="events.html">EVENTS</a>
@@ -60,7 +62,7 @@
 		        </div><!-- /.navbar-collapse -->
 
 	     	</div><!-- /.container-fluid -->
-	    </nav><!-- navbar -->
+	    </nav>
 	</div> <!-- /.container -->
 	<main>		
 		<section id="contact">
@@ -84,7 +86,7 @@
 							<li>PHP 100 for children and students with proper school IDs </li>
 						</ul>
 						<p>We also have <strong>Pinto Café</strong> by <strong>Peppermill</strong>.</p>
-						<p>Open from10:30am to 6pm.</p>
+						<p>Open from 10:30 am to 6:00 pm</p>
 						<p>You can call <strong>633-0329</strong> for reservations.</p>
 					</div><!-- /.col-lg-6 -->
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -128,11 +130,11 @@
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Pinto Art Museum</h4>
 					<p>1 Sierra Madre St.<br>Grand Heights Rd,<br>Antipolo, 1870 Rizal<br>(02) 697 1015</p>
 				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4 col-md-4 col-sm-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Hours</h4>
 					<p>Monday:	Closed<br>
 					Tuesday:	9:00 AM – 6:00 PM<br>
@@ -142,31 +144,50 @@
 					Saturday:	9:00 AM – 6:00 PM<br>
 					Sunday:	9:00 AM – 6:00 PM<br>
 				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4 col-md-4 col-sm-12">					
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-newsletter">					
 					<h4>Sign up to Newsletter</h4>
-					<input type="email" name="newsletter" id="newsletter" size="26" placeholder="Enter your email">
-					<h4>Follow Us</h4	>
-					<a href="https://www.facebook.com/Pinto-Art-Museum-281376918562097/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-					<a href="https://www.instagram.com/pinto.art/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-					<a href="https://www.tripadvisor.com.ph/Attraction_Review-g1026427-d2097589-Reviews-Pinto_Art_Museum-Antipolo_City_Rizal_Province_Calabarzon_Region_Luzon.html"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true"></i></a>
-					<a href="disclaimer.html"><h4>Disclaimer</h4></a>
+					<form>
+						<input type="email" name="newsletter" id="newsletter" size="18" placeholder="Enter your email"> 
+						<button type="button" class="btn btn-warning">Sign Up</button>
+					</form>
+					<h4>Follow Us</h4>
+					<a href="https://www.facebook.com/Pinto-Art-Museum-281376918562097/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.instagram.com/pinto.art/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.tripadvisor.com.ph/Attraction_Review-g1026427-d2097589-Reviews-Pinto_Art_Museum-Antipolo_City_Rizal_Province_Calabarzon_Region_Luzon.html" target="_blank"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true"></i></a>						
 				</div><!-- /.col-lg-4 -->
 			</div><!-- /.row -->
-	  		<div class="row">
-	  			<div class="col-lg-12">
-	  				<p class="text-center">&copy; Copyright 2017 Pinto Art Museum</p>
+			<div class="row">
+	  			<div class="col-lg-12 text-center footer-copyright">
+	  				<!-- DISCLAIMER -->
+					<!-- Trigger the modal with anchor link -->				  	
+				  	<a href="#" data-toggle="modal" data-target="#myModal" id="tooltip" class="text-center">Disclaimer</a>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-sm">
+					     	 <div class="modal-content">
+						        <div class="modal-header">
+							          <button type="button" class="close" data-dismiss="modal">&times;</button>
+							          <h3 class="modal-title text-center">Disclaimer</h3>
+						        </div><!-- /.model-header -->
+						        <div class="modal-body">
+						          	<p>No copyright infringement is intended. This is only for educational purposes and not for profit. Some asset/s used are not owned by the developer/s unless otherwise stated; the credit goes to the owner</p>
+						        </div><!-- /.modal-body -->
+						        <div class="modal-footer">
+						         	 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+						        </div><!-- /.modal-footer -->
+					      	</div><!-- /.modal-content -->
+					    </div><!-- /.modal-dialog -->
+					</div><!-- /#myModal -->
+	  				<p>&copy; Copyright 2017 Pinto Art Museum</p>
 	  			</div><!-- /.col-lg-12 -->
 	  		</div><!-- /.row -->
 	  	</div><!-- /.container -->
   	</footer>
-	
-
-
-
-
 	<!-- Import JQuery -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>	
-	<!-- Import Custom Stylesheets -->
+	<!-- Import WOW JS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+	<!-- Import Custom Javascript -->
 	<script type="text/javascript" src="js/script.js"></script>
 	<!-- Import Bootstrap Javascript -->
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>

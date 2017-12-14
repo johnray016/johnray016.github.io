@@ -4,13 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>Pinto Art Museum</title>
+	<meta name="description" content="Galleries in mission-style buildings amid lush gardens, exhibiting contemporary & native art.">
+	<title>Pinto Art Museum | Your doorway leading to modern and contemporary art</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 	<!-- Import Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Devonshire|Lato:300,400,700" rel="stylesheet">
 	<!-- Import Fontawesome -->
 	<script src="https://use.fontawesome.com/b20718abdb.js"></script>
+	<!-- Import Animate CSS -->
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<!-- Import Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<!-- Import Custom Stylesheets -->
@@ -25,7 +28,6 @@
 	  	<div class="container">
 	    	<nav class="navbar navbar-inverse navbar-fixed-top pintoMain">
 		      	<div class="container-fluid">
-
 			        <div class="navbar-header">
 			          	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			            <span class="sr-only">Toggle navigation</span>
@@ -49,7 +51,7 @@
 				            	<a href="gallery.html">GALLERY</a>
 				            </li>
 				            <li>
-				            	<a href="pinto-cafe.html">PINTO CAFE</a>
+				            	<a href="pintocafe.html">PINTO CAFE</a>
 				            </li>
 				            <li>
 				            	<a href="events.html">EVENTS</a>
@@ -61,10 +63,10 @@
 			        </div><!-- /.navbar-collapse -->
 
 		     	</div><!-- /.container-fluid -->
-		    </nav><!-- navbar -->
-	    <h1>Welcome to Pinto Art Museum</h1>
-	    <p class="lead">Your doorway leading to modern and contemporary art.</p>
-	    <button type="button" class="btn btn-warning btn-lg">View Gallery</button>	    
+		    </nav>
+	    	<h1>Welcome to Pinto Art Museum</h1>
+	    	<p class="lead">Your doorway leading to modern and contemporary art.</p>
+	    	<button type="button" class="btn btn-warning btn-lg"><a href="gallery.html">View Gallery</a></button>	    
      
 		</div><!-- /.container -->
 	</header>
@@ -78,30 +80,30 @@
 						<p>Galleries in mission-style buildings amid lush gardens, exhibiting contemporary &amp; native art.</p>
 					</div><!-- /.col-lg-12 -->
 				</div><!-- /.row -->
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-xs-12 swap-info">
+				<div class="row animated wow shake" data-wow-duration="5s" data-wow-delay="5s">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<h3 class="text-center">A place full of native art</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, nesciunt optio perspiciatis sequi quam iusto veritatis excepturi, quas dolore, quasi, quo! Laudantium numquam, rerum perferendis dolor possimus id, nobis omnis?</p>
 					</div><!-- /.col-lg-6 -->
-					<div class="col-lg-6 col-md-6 col-xs-12 thumbnail">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thumbnail">
 						<img class="img-responsive" src="img/pinto_art_museum_image_09.jpg" alt="random image">
 					</div><!-- /.col-lg-6 -->
 				</div><!-- /.row -->
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-xs-12">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<h3 class="text-center">A place to make memories</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, nesciunt optio perspiciatis sequi quam iusto veritatis excepturi, quas dolore, quasi, quo! Laudantium numquam, rerum perferendis dolor possimus id, nobis omnis?</p>
 					</div><!-- /.col-lg-6 -->
-					<div class="col-lg-6 col-md-6 col-xs-12 thumbnail">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thumbnail">
 						<img class="img-responsive" src="img/pinto_art_museum_image_01.jpg" alt="random image">
 					</div><!-- /.col-lg-6 -->
 				</div><!-- /.row -->
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-xs-12">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<h3 class="text-center">A place to unwind</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, nesciunt optio perspiciatis sequi quam iusto veritatis excepturi, quas dolore, quasi, quo! Laudantium numquam, rerum perferendis dolor possimus id, nobis omnis?</p>
 					</div><!-- /.col-lg-6 -->
-					<div class="col-lg-6 col-md-6 col-xs-12 thumbnail">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thumbnail">
 						<img class="img-responsive" src="img/pinto_art_museum_image_03.jpg" alt="random image">
 					</div><!-- /.col-lg-6 -->
 				</div><!-- /.row -->
@@ -111,12 +113,11 @@
 			<section id="pinto-cafe">
 				<div class="row" id="box-search">
 				    <div class="thumbnail">
-				       <img src="img/pinto_cafe_food.jpg" alt="random" class="img-responsive">
 				        <div class="caption">
-				        	<div class="col-lg-6 col-md-6 col-xs-12">
-					        	<h3>Pinto Cafe by Peppermill</h3>
+				        	<div class="col-lg-6 col-md-6 col-xs-12 pinto-cafe">
+					        	<h3>Pinto Café by Peppermill</h3>
 					            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fugit error dicta veritatis. Mollitia amet quod enim, iste minus illo cum eligendi corporis sunt nesciunt nam sed repellendus quasi perferendis.</p>
-					            <button type="button" class="btn btn-warning btn-lg">View Menu</button>
+					            <button type="button" class="btn btn-warning btn-lg"><a href="pintocafe.html">View Menu</a></button>
 				            </div><!-- /.col-md-6 -->
 				        </div><!-- /.caption -->
 				    </div><!-- /.thumbnail -->
@@ -125,104 +126,87 @@
 			<!-- Testimonials & Events -->
 			<section id="testimonials">
 				<div class="row">
-					<div class="col-lg-8 col-xs-12 panel">
-						<div class="well">
-							<div class="media">
-								<h2 class="text-center">What our previous visitors says...</h2>
-								<div class="media-body">
-									<!-- Start Testimonials Carousel -->
-									<div id="myCarousel" class="carousel slide" data-ride="carousel">
-									  <!-- Indicators -->
-									  <ol class="carousel-indicators">
-									    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-									    <li data-target="#myCarousel" data-slide-to="1"></li>
-									    <li data-target="#myCarousel" data-slide-to="2"></li>
-									  </ol>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<h3 class="text-center testi-info">What our previous visitors says...</h3>
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						    <!-- Indicators -->
+						    <ol class="carousel-indicators">
+							    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							    <li data-target="#myCarousel" data-slide-to="1"></li>
+							    <li data-target="#myCarousel" data-slide-to="2"></li>
+						    </ol>
 
-									  <!-- Wrapper for slides -->
-									   <div class="carousel-inner">
-									    <div class="item active">
-											<div class="col-lg-3">
-										    	<img src="img/juan.jpg" class="img-responsive">
-											</div><!-- /.col-lg-3 -->
-											<div class="col-lg-9">
-											    <h3>Juan Dela Cruz</h3>
-											    <p>So nice to be here. A great place for relaxing mind and heart.. Paintings are really amazing 'cuz it shows and reflects the reality of our world from the past up to now. Thanks Pinto Art Museum, the entrance fee is enough to feel and see the great ambiance and cool places.</p>
-										    </div><!-- /.col-lg-9 -->
-									    </div><!-- /.item -->
+						    <!-- Wrapper for slides -->
+						    <div class="carousel-inner">
 
-									    <div class="item">
-											<div class="col-lg-3">
-										    	<img src="img/cardo.jpg" class="img-responsive">
-											</div><!-- /.col-lg-3 -->
-											<div class="col-lg-9">									
-											    <h3>Ricardo Dalisay</h3>
-											    <p>Pinto Art Museum is one of the hidden gems of Rizal province. Once you step into the museum, you will be transported to another place that is not in the Philippines. The rustic and Mediterranean vibe elevates the experience of art appreciation; the simple yet majestic addition of the bell tower in the 'Pinto Academy of Wholeness' (can't really remember the name) was astounding.</p>
-										    </div><!-- /.col-lg-9 -->
-									    </div><!-- /.item -->
+							    <div class="item active">
+							    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+							        	<img src="img/ivy.jpg" class="img-responsive">
+							        </div><!-- /.col-lg-3 -->
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+							        	<i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i><p>Home of Indigenous Arts, Paintings, Artifacts and excellent Architecture. Well maintained and perfect for relaxation, photography and Art Appreciation. Visit the place early so you'll have enough time to tour the place. It's a safe haven to the eyes of an Artist. Thumbs up!</p>
+							        	<p>- Ivy Aguas</p>
+							        </div><!-- /.col-lg-9 -->
+							    </div><!-- /.item active -->
 
-									    <div class="item">
-											<div class="col-lg-3">
-										    	<img src="img/ivy.jpg" class="img-responsive">
-											</div><!-- /.col-lg-3 -->
-											<div class="col-lg-9">									
-										    	<h3>Ivy Aguas</h3>
-										    	<p>Home of Indigenous Arts, Paintings, Artifacts and excellent Architecture. Well maintained and perfect for relaxation, photography and Art Appreciation. Visit the place early so you'll have enough time to tour the place. It's a safe haven to the eyes of an Artist. Thumbs up!</p>
-										    </div><!-- /.col-lg-9 -->
-									    </div><!-- /.item -->
-								  	</div><!-- /.carousel-inner -->
+							    <div class="item">
+							       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+							        	<img src="img/cardo.jpg" class="img-responsive text-center">
+							        </div><!-- /.col-lg-3 -->
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+							        	<i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i><p>Pinto Art Museum is one of the hidden gems of Rizal province. Once you step into the museum, you will be transported to another place that is not in the Philippines. The rustic and Mediterranean vibe elevates the experience of art appreciation; the simple yet majestic addition of the bell tower in the 'Pinto Academy of Wholeness' (can't really remember the name) was astounding.</p>
+							        	<p>- Ricardo Dalisay</p>
+							        </div><!-- /.col-lg-9 -->			        
+							    </div><!-- /.item -->
+							    
+							    <div class="item">
+							       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+							        	<img src="img/juan.jpg" class="img-responsive text-center">
+							        </div><!-- /.col-lg-3 -->
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+							        	<i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i><p>So nice to be here. A great place for relaxing mind and heart.. Paintings are really amazing 'cuz it shows and reflects the reality of our world from the past up to now. Thanks Pinto Art Museum, the entrance fee is enough to feel and see the great ambiance and cool places.</p>
+							        	<p>- Juan Dela Cruz</p>
+							        </div><!-- /.col-lg-9 -->	
+							    </div><!-- /.item -->
+						  
+						    </div><!-- /.carousel-inner -->
 
-									  <!-- Left and right controls -->
-									  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-									    <span class="glyphicon glyphicon-chevron-left"></span>
-									    <span class="sr-only">Previous</span>
-									  </a>
-									  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-									    <span class="glyphicon glyphicon-chevron-right"></span>
-									    <span class="sr-only">Next</span>
-									  </a>
-									</div><!-- /.myCarousel -->
-								</div><!-- /.media-body -->
-							</div>	<!-- /.media -->
-						</div><!-- /.well -->
+						    <!-- Left and right controls -->
+						    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							    <span class="glyphicon glyphicon-chevron-left"></span>
+							    <span class="sr-only">Previous</span>
+						    </a>
+						    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+							    <span class="glyphicon glyphicon-chevron-right"></span>
+							    <span class="sr-only">Next</span>
+						    </a>
+						</div><!-- /#myCarousel -->
 					</div><!-- /.col-lg-8 -->
-
-
-					<!-- Upcoming Events -->
-					<div class="col-lg-4 col-xs-12 panel panel-warning">
-						<div class="panel-heading">
-	  						<h2 class="text-center">Events</h2>
-	  					</div><!-- /.panel-heading -->		
-	  					<div class="panel-body">					
-							<div class="well">
-			  					<div class="media">
-			  						<div class="media-body">
-			  							<h4><a href="#">Finishing lines</a></h4>
-			  							<p><a href="#">Nov. 28 - Dec. 11, 2017</a></p>
-			  						</div><!-- media-body -->
-			  					</div><!-- /.media -->
-	  						</div><!-- /.well -->
-	  						<div class="well">
-			  					<div class="media">
-			  						<div class="media-body">
-			  							<h4><a href="#">Lamang Loob, pluviophile II, Detritus, In Transit</a></h4>
-			  							<p><a href="#">13 Days · Nov 5 - Nov 19</a></p>
-			  						</div><!-- /.media-body -->
-			  					</div><!-- /.media -->
-	  						</div><!-- /.well -->
-  						</div><!-- /.panel-body -->
-					</div><!-- /.panel -->
+					<div class="col-lg-4 col-md-8 col-sm-4 col-xs-12 latest-event">
+						<div class="panel panel-warning">
+						    <div class="panel-heading text-center"><h3>Latest Event</h3></div>
+						    <div class="panel-body">
+						    	<div class="well">
+									<a href="events.html"><img src="img/event1.jpg" alt="Finishing Lines" class="img-responsive text-center">
+									<h4>Finishing Lines</h4></a>
+									<p>Solo Exhibition by Ferdie Montemayor</p>
+									<p>Nov. 28 - Dec. 11, 2017</p>
+								</div><!-- /.well -->
+						    </div><!-- /.panel-body -->
+						</div><!-- /.panel -->
+					</div><!-- /.col-lg-4 -->
 				</div><!-- /.row -->
-			</section>	<!-- /#testimonials -->
+			</section><!-- /#testimonials -->
+		</div>	<!-- /.container -->
 	</main>
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Pinto Art Museum</h4>
 					<p>1 Sierra Madre St.<br>Grand Heights Rd,<br>Antipolo, 1870 Rizal<br>(02) 697 1015</p>
 				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4 col-md-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<h4>Hours</h4>
 					<p>Monday:	Closed<br>
 					Tuesday:	9:00 AM – 6:00 PM<br>
@@ -232,31 +216,50 @@
 					Saturday:	9:00 AM – 6:00 PM<br>
 					Sunday:	9:00 AM – 6:00 PM<br>
 				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4 col-md-4 col-xs-12">					
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-newsletter">					
 					<h4>Sign up to Newsletter</h4>
-					<input type="email" name="newsletter" id="newsletter" size="26" placeholder="Enter your email">
-					<h4>Follow Us</h4	>
-					<a href="https://www.facebook.com/Pinto-Art-Museum-281376918562097/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-					<a href="https://www.instagram.com/pinto.art/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-					<a href="https://www.tripadvisor.com.ph/Attraction_Review-g1026427-d2097589-Reviews-Pinto_Art_Museum-Antipolo_City_Rizal_Province_Calabarzon_Region_Luzon.html"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true"></i></a>
-					<a href="disclaimer.html"><h4>Disclaimer</h4></a>
+					<form>
+						<input type="email" name="newsletter" id="newsletter" size="18" placeholder="Enter your email"> 
+						<button type="button" class="btn btn-warning">Sign Up</button>
+					</form>
+					<h4>Follow Us</h4>
+					<a href="https://www.facebook.com/Pinto-Art-Museum-281376918562097/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.instagram.com/pinto.art/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.tripadvisor.com.ph/Attraction_Review-g1026427-d2097589-Reviews-Pinto_Art_Museum-Antipolo_City_Rizal_Province_Calabarzon_Region_Luzon.html" target="_blank"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true"></i></a>						
 				</div><!-- /.col-lg-4 -->
 			</div><!-- /.row -->
-	  		<div class="row">
-	  			<div class="col-lg-12">
-	  				<p class="text-center">&copy; Copyright 2017 Pinto Art Museum</p>
+			<div class="row">
+	  			<div class="col-lg-12 text-center footer-copyright">
+	  				<!-- DISCLAIMER -->
+					<!-- Trigger the modal with anchor link -->				  	
+				  	<a href="#" data-toggle="modal" data-target="#myModal" id="tooltip" class="text-center">Disclaimer</a>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-sm">
+					     	 <div class="modal-content">
+						        <div class="modal-header">
+							          <button type="button" class="close" data-dismiss="modal">&times;</button>
+							          <h3 class="modal-title text-center">Disclaimer</h3>
+						        </div><!-- /.model-header -->
+						        <div class="modal-body">
+						          	<p>No copyright infringement is intended. This is only for educational purposes and not for profit. Some asset/s used are not owned by the developer/s unless otherwise stated; the credit goes to the owner</p>
+						        </div><!-- /.modal-body -->
+						        <div class="modal-footer">
+						         	 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+						        </div><!-- /.modal-footer -->
+					      	</div><!-- /.modal-content -->
+					    </div><!-- /.modal-dialog -->
+					</div><!-- /#myModal -->
+	  				<p>&copy; Copyright 2017 Pinto Art Museum</p>
 	  			</div><!-- /.col-lg-12 -->
 	  		</div><!-- /.row -->
 	  	</div><!-- /.container -->
   	</footer>
-	
-
-
-
-
 	<!-- Import JQuery -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>	
-	<!-- Import Custom Stylesheets -->
+	<!-- Import WOW JS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+	<!-- Import Custom Javascript -->
 	<script type="text/javascript" src="js/script.js"></script>
 	<!-- Import Bootstrap Javascript -->
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
