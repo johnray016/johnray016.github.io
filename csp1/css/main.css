@@ -667,6 +667,8 @@ footer div.col-lg-4 > form >  button {
 	font-family: 'Lato', sans-serif;
 }
 
+
+
 /*-------------------------------*/
 /*     Mobile & Smartphones      */
 /*-------------------------------*/
@@ -831,13 +833,6 @@ footer div.col-lg-4 > form >  button {
 	}	
 	span.image-info-align {
 	width: 50%;
-	}
-}
-
-@media only screen and (min-width: 481px) and (max-width: 989px){
-	.navbar-inverse .navbar-nav > li > a {
-		padding: 10px 5px 5px;
-		font-size: 1.2em;
 	}
 }
 /*-------------------------------*/
