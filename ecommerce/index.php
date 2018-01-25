@@ -1,6 +1,12 @@
 <?php 
 function display_title(){
-	echo "Home";
+	echo "Manila Outdoors - Outdoor, Camping and Hiking Gear from Top Brands";
+}
+function meta_description(){
+	echo "At Manila Outdoors, we think getting ‘out there’ is even better together.";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, hiking equipment, camping gears, outdoor gear";
 }
 function display_content(){
 	?>
@@ -68,7 +74,7 @@ function display_content(){
 		</div>
 
 		<div class="featured-products">
-			<h3>FEATURES PRODUCTS</h3>
+			<h3>LATEST PRODUCTS</h3>
 			<div class="featured-product-container">
 				<div class="featured-product1 text-center">
 					<img src="assets/img/products/Osprey_Daylite_Plus_20L_Travel_Pack_Beryl_Blue_1.jpg" alt="" class="img-responsive">
@@ -101,27 +107,27 @@ function display_content(){
 			<h3>OUR BRANDS</h3>
    			<section class="brands slider">
 				<div>
-			      <img src="assets/img/brands/ferrino_logo.jpg" alt="Ferrino Logo">
+			      <img src="assets/img/brands/ferrino_logo.png" alt="Ferrino Logo">
 			    </div>
 
 			    <div>
-			      <img src="assets/img/brands/craghoppers_logo.jpg" alt="Craghoppers Logo">
+			      <img src="assets/img/brands/craghoppers_logo.png" alt="Craghoppers Logo">
 			    </div>
 
 			    <div>
-			      <img src="assets/img/brands/merrell.logo.jpg" alt="Merrell Logo">
+			      <img src="assets/img/brands/merrell_logo.png" alt="Merrell Logo">
 			    </div>
 
 			    <div>
-			      <img src="assets/img/brands/osprey_logo.jpg" alt="Osprey Logo">
+			      <img src="assets/img/brands/osprey_logo.png" alt="Osprey Logo">
 			    </div>
 
 			    <div>
-			      <img src="assets/img/brands/tttm_logo.jpg" alt="Ticket to the Moon Logo">
+			      <img src="assets/img/brands/tttm_logo.png" alt="Ticket to the Moon Logo">
 			    </div>
 
 			    <div>
-			      <img src="assets/img/brands/vargo_logo.jpg" alt="Vargo Logo">
+			      <img src="assets/img/brands/vargo_logo.png" alt="Vargo Logo">
 			    </div>
 			</section>
 		</div>

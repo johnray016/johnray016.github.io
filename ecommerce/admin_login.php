@@ -1,15 +1,12 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="<?php meta_description(); ?>">
-    <meta name="keywords" content="<?php meta_keywords(); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php display_title(); ?></title>
+    <title>Admin Login - Manila Outdoors</title>
     
-    <!--Import Google Fonts-->
+     <!--Import Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,500,700|Roboto+Condensed:400,700|Oswald:600|Open+Sans:400,700|Shadows+Into+Light" rel="stylesheet">
 
     <!--Import Fontawesome-->
@@ -30,15 +27,25 @@
 </head>    
 
 <body>
-    <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>  
-	<?php require "partials/nav.php";?>
-    <main>
-    	<?php display_content(); ?>	
-    </main>
-    <?php require "partials/footer.php";?>
+    <div class="admin-login-page">
+      <div class="admin-login-container">
+        <h3>Login to Admin Panel</h3>
+          <form method="POST" action="authenticate.php">
+            Username <span class="red">*</span> <br> 
+            <input type="text" name="adminUsername" placeholder="Enter Username" id="adminUsername">
+            <br>
+            Password <span class="red">*</span> <br> 
+            <input type="password" name="adminPassword" placeholder="Enter Password" id="adminPassword"><br>
+            <input type="submit" value="LOGIN" class="btn btn-warning" name="adminLogin" id="adminLogin">
+            <span id="error-admin-login"></span>
+          </form> 
+      </div>
+    </div>
+
+
     
 
-    <!-- Import Slick Slider JS -->
+     <!-- Import Slick Slider JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
 
     <!-- Import Bootstrap JS -->
@@ -47,5 +54,4 @@
     <!--Import Custom Javascript-->
     <script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
-</html>	
-
+</html> 

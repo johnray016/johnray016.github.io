@@ -2,6 +2,12 @@
 function display_title(){
 	echo "Terms and Conditions - Manila Outdoors";
 }
+function meta_description(){
+	echo "Manila Outdoors lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, terms and conditons";
+}
 function display_content(){ 
 	?>
 	<section class="terms-and-conditions">

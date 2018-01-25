@@ -2,6 +2,12 @@
 function display_title(){
 	echo "Privacy Policy - Manila Outdoors";
 }
+function meta_description(){
+	echo "This privacy notice discloses the privacy practices for Manila Outdoors<";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, privacy policy";
+}
 function display_content(){ 
 	?>
 	<section class="privacy_policy">

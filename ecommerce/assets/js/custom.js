@@ -47,32 +47,42 @@ $(document).ready(function(){
 	}); // End of Slick Slider (Brand Logo Slider)
 
 
+	//Hide and show the Sub-menu under "My Account"
+	$('.my-accout').click(function() {
+	    $('#myaccount-menu').toggle();
+	    $(this).toggleClass('orange');
+	    event.stopPropagation();
+	});
+	//Hide and show the Sub-menu under "Sign In"
+	$('.login-text').click(function() {
+	    $('#login-menu').toggle();
+	    $(this).toggleClass('orange');
+	});
+	$(document).click(function() {
+		$('#myaccount-menu').hide();
+		$('.my-accout').removeClass('orange');
+	});
+	// end of code for "Sign in" and "My Account"
 
+
+	//Delete products in admin panel
+	$(".delete_modal_body").click(function(){
+		var index = $(this).data('index')
+		$.ajax({
+			method: 'post',
+			url: 'delete_modal_body_endpoint.php',
+			data: {
+				index : index
+			},
+			success: function(data){
+				$("#modal-body").html(data);
+			}
+		})
+	})
+
+
+	
 })
-
-
-
-
-var validate = document.getElementById('not-match');
-var registerButton = document.getElementById('register');
-var pw = document.getElementById('pw'), cpw = document.getElementById('cpw');
-
-
-function confirmPassword(){
-  if (pw.value != cpw.value && pw.value.length != cpw.value.length) {	
-  	validate.innerText = "Password not match";
- 	registerButton.classList.add("disabled");	
- 	validate.classList.add("password-not-match");	
- 	validate.classList.remove("password-match");
-  } else if (pw.value == cpw.value && pw.value.length == cpw.value.length) {
- 	registerButton.classList.remove("disabled");
-  	validate.innerText = "Password Match";
- 	validate.classList.remove("password-not-match");	
- 	validate.classList.add("password-match");	
-  }	 
-document.getElementById("cpw").addEventListener('keyup', confirmPassword);
-}
-
 
 //Menu Open in Mobile
 function openMenu() {

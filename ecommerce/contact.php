@@ -2,6 +2,12 @@
 function display_title(){
 	echo "Contact - Manila Outdoors";
 }
+function meta_description(){
+	echo "Thank you for choosing Manila Outdoors.";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, contact, contact us, email, address";
+}
 function display_content(){ 
 	?>
 	<section class="contact">

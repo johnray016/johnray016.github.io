@@ -2,6 +2,12 @@
 function display_title(){
 	echo "Delivery and Shipping - Manila Outdoors";
 }
+function meta_description(){
+	echo "We aim to provide you with the best service we can.";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, delivery, shipping";
+}
 function display_content(){ 
 	?>
 	<section class="delivery-and-shipping">

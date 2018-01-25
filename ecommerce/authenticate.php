@@ -1,36 +1,48 @@
 <?php
-	function display_title(){
-		echo "authenticate";
+session_start();
+require 'connection.php';
+
+if(isset($_POST['login'])){
+	$username = $_POST['username']; 
+	$password = sha1($_POST['password']); 
+
+	$sql = "SELECT * FROM customers WHERE username = '$username' AND password = '$password'";
+	$result = mysqli_query($conn,$sql); 
+	
+
+	if(mysqli_num_rows($result)>0){
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['username'] = $username;
+		header('location: index');
+	} else {
+		header('location: customer-login');
 	}
-	function display_content(){
+}
 
-
-
-	require "users.php";
-
+if(isset($_POST['register'])){
 	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-
-// if (isset($users[$username])) {
-// 	if ($users[$username] == $password)) {
-// 		// code fo login
-// 	} else {
-// 		echo "correct username, wrong password"
-// 	}
-// } else {
-// 	echo "wrong password";
-// }
-// exit();
-
-
-		if (isset($users[$username]) && $users[$username] == $password) {
-			$_SESSION['username'] = $username;
-			header('location: home.php');
-		} else {
-			echo "Incorrect username or password.";
-			echo "please login again <a href='my_form.php'>here</a>";
-		}
+	$sql = "SELECT * FROM customers WHERE username = '$username'";
+	$result = mysqli_query($conn,$sql);
+	if(mysqli_num_rows($result)>0){
+		echo "invalid";
+	} else {
+		echo "valid";
 	}
-require "template.php"
+}
+
+if(isset($_POST['adminLogin'])){
+	$username = $_POST['adminUsername']; 
+	$password = sha1($_POST['adminPassword']); 
+
+	$sql = "SELECT * FROM admin_accounts WHERE admin_username = '$username' AND admin_password = '$password'";
+	$result = mysqli_query($conn,$sql); 	
+
+	if(mysqli_num_rows($result)>0){
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['admin_username'] = $username;
+		header('location: ml_admin.php');
+	} else {
+		header('location: admin_login.php');
+	}
+}
 ?>

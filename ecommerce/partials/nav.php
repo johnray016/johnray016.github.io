@@ -1,8 +1,9 @@
  <?php
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
+require 'connection.php';
 ?>
-
- <nav>
+  
+ <nav>       
     <div class="nav-wrapper">
 
         <div class="nav-container-left">
@@ -16,14 +17,59 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
         
         <div class="nav-button-container">
           <ul class="nav-button">
-            <a href="#" target="_blank"><li><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</li></a>
-            <a href="#" target="_blank"><li><i class="fa fa-user" aria-hidden="true"></i>LOGIN</li></a>
+            <li><a href="#" target="_blank"><i class="fa fa-question-circle-o" aria-hidden="true"></i> CUSTOMER CARE</a></li>
+            <?php
+              echo isset($_SESSION['username']) ?
+              '<li id="my-account-toggle"><span class="my-accout"><i class="fa fa-user" aria-hidden="true"></i> MY ACCOUNT <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    <div id="myaccount-menu">
+                       <ul id="myaccount-menu-box">
+                         <li><a href="">My Account</a></li>
+                         <li><a href="">Wishlist</a></li>
+                         <li><hr></li>                         
+                         <li><a href="logout.php">Sign out</a></li>
+                       </ul> 
+                    </div>
+              </li>' :
+              '<li id="login-toggle"><span class="login-text"><i class="fa fa-sign-in aria-hidden="true"></i> SIGN IN <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    <div id="login-menu">
+                       <ul id="login-menu-box">
+                         <form method="POST" action="authenticate.php">
+                            Username<br> 
+                            <input type="text" name="username" placeholder="Enter Username">
+                            <br>
+                            Password<br> 
+                            <input type="password" name="password" placeholder="Enter Password"><br>
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Remember me</label>
+                            </div>
+                            <input type="submit" value="LOGIN" class="btn btn-warning" name="login"><br>
+                            <span>Don&#39;t have an account? Sign up here.</span>
+                            <a href="register-account"><button type="button" class="btn btn-default">CREATE ACCOUNT</button></a>
+                        </form> 
+                       </ul> 
+                    </div>
+              </li>' ;
+            ?>            
           </ul>              
           <i class="fa fa-shopping-bag" aria-hidden="true"></i>
         </div>
         <div id="mySidemenu" class="sidemenu">
           <a href="javascript:void(0)" class="close" onclick="closeMenu()">
-            <i class="fa fa-times" aria-hidden="true""></i></a>
+            <i class="fa fa-times" aria-hidden="true""></i></a>           
+              
+            <?php
+              if (isset($_SESSION['username'])) { 
+                  $username = $_SESSION['username'];
+                  $sql = "SELECT * FROM customers WHERE username = '$username'";
+                  $result = mysqli_query($conn,$sql);
+                  $row = mysqli_fetch_assoc($result);
+                  extract($row);
+                   echo "<h4>Hello $first_name</h4>";
+               } else {
+                  echo '';
+               }   
+            ?>   
+
             <ul id="mySideNav">              
                 <a href="index.php"><li>HOME</li></a>
                 <a href="#"><li>APPAREL</li></a>
@@ -33,13 +79,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
                 <a href="#"><li>HAMMOCKS</li></a>
                 <a href="#"><li>SLEEPING GEARS</li></a>
             </ul>
-            <a href="#" target="_blank"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</a>
+            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</a>
             <br>  
-            <a href="#" target="_blank"><i class="fa fa-user" aria-hidden="true"></i>LOGIN</a>
+
+             <?php
+              echo isset($_SESSION['username']) ? '<a href="logout.php"><i class="fa fa-user" aria-hidden="true"></i>SIGN OUT</a>' : '<a href="customer_account.php"><i class="fa fa-user" aria-hidden="true"></i>SIGN IN</a>' ;
+            ?>            
+            
         </div>
         <div class="nav-bottom-container">
             <ul class="menu">              
-                <a href="index.php"><li>HOME</li></a>
+                <a href="index"><li>HOME</li></a>
                 <a href="#" target="_blank"><li>APPAREL</li></a>
                 <a href="#" target="_blank"><li>BACKPACK</li></a>
                 <a href="#" target="_blank"><li>TENTS</li></a>

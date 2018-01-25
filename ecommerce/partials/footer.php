@@ -27,8 +27,8 @@
           <div class="my-account clearfix">
             <h3>MY ACCOUNT</h3>
             <ul class="footer-ul-left light-grey">
-              <li><a href="about.php">About Us</a></li>
-              <li><a href="contact.php">Contact Us</a></li>
+              <li><a href="about">About Us</a></li>
+              <li><a href="contact">Contact Us</a></li>
               <li>My Account</li>
             </ul>
             <ul class="footer-ul-right light-grey">
@@ -39,12 +39,12 @@
           <div class="links clearfix">
             <h3>LINKS</h3>
             <ul class="footer-ul-left light-grey">
-              <li><a href="delivery_and_shipping.php">Delivery &amp; Shipping</a></li>
-              <li><a href="returns_and_exchanges.php">Returns &amp; Exchanges</a></li>              
-              <li><a href="terms_and_conditions.php">Terms &amp; Conditions</a></li>
+              <li><a href="delivery-and-shipping">Delivery &amp; Shipping</a></li>
+              <li><a href="returns-and-exchanges">Returns &amp; Exchanges</a></li>              
+              <li><a href="terms-and-conditions">Terms &amp; Conditions</a></li>
             </ul>
             <ul class="footer-ul-right light-grey">
-              <li><a href="privacy_policy.php">Privacy Policy</a></li>
+              <li><a href="privacy-policy">Privacy Policy</a></li>
               <li><a href="#" data-toggle="modal" data-target="#myModal" id="tooltip">Disclaimer</a>
               <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-sm">

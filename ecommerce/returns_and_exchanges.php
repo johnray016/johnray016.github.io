@@ -2,6 +2,12 @@
 function display_title(){
 	echo "Returns and Exchanges - Manila Outdoors";
 }
+function meta_description(){
+	echo "Manila Outdoors lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+}
+function meta_keywords(){
+	echo "Manila Outdoors, returns, exchanges";
+}
 function display_content(){ 
 	?>
 	<section class="returns-and-exchanges">
