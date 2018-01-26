@@ -25,6 +25,7 @@ require 'connection.php';
 		VALUES 
 		('$productName', '$sku', '$shortDescription', '$longDescription', $productPrice, $productQuantity, '$image', $productCategory, '$metaTitle', '$metaDescription', '$metaKeywords', '$date')";
 	mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	header('location: ml_admin.php');
 	// }
 
 

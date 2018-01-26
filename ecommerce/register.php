@@ -148,21 +148,13 @@ function display_content(){
 			barangay = $('#barangay').val();
 			city = $('#city').val();
 			province = $('#province').val();
-			if (!(username == '' || password == '' || confirmPassword == '' || firstName == '' || lastName == '' || email == '' || streetAddress == '' || barangay == '' || city == '' || province == '')) {
-
-				//Prevent form submission if the checkmark (TERMS AND CONDITIONS) is not checked.
-				if ($("#confirm_TAC").is(':checked')) {
-					return true; 
-				} else {
-					return false;
-				}
-				
-				return true;	
-			} else {
+			if (username == '' || password == '' || confirmPassword == '' || firstName == '' || lastName == '' || email == '' || streetAddress == '' || barangay == '' || city == '' || province == '' || $("#confirm_TAC").is(":not(:checked)")) {
 				$('#registration_error').css('color','red');
 				$('#registration_error').html('Please fill out required * fields.');
-				$('.registration-error-container').addClass("alert alert-danger")
-				return false;
+				$('.registration-error-container').addClass("alert alert-danger");			
+				return false;	
+			} else {
+				return true;
 			}
 		};
 	</script>

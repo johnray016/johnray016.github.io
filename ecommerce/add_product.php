@@ -20,11 +20,11 @@
 				      <textarea class="form-control" id="longDescription" name="longDescription"></textarea>
 				    </div>
 				    <div class="form-group">
-				      <label for="product-price">Price:</label><span class="red"> *</span>
+				      <label for="productPrice">Price:</label><span class="red"> *</span>
 				      <input type="number" class="form-control" id="productPrice" name="productPrice">
 				    </div>
 				    <div class="form-group">
-				      <label for="product-quantity">Quantity:</label><span class="red"> *</span>
+				      <label for="productQuantity">Quantity:</label><span class="red"> *</span>
 				      <input type="number" class="form-control" id="productQuantity" name="productQuantity">
 				    </div>
 				</div>
@@ -51,10 +51,12 @@
 				    <div class="form-group">	
 				      <label for="metaTitle">Meta Title:</label><span class="red"> *</span><br>
 				      <input type="text" class="form-control" id="metaTitle" name="metaTitle">
+				      <span class="orange">Keep it under 67 characters</span>
 				    </div>
 				    <div class="form-group">
 				      <label for="metaDescription">Meta Description:</label><span class="red"> *</span><br>
 				      <textarea class="form-control" id="metaDescription" name="metaDescription"></textarea>
+				      <span class="orange">Keep it under 160 characters</span>
 				    </div>
 				    <div class="form-group">
 				      <label for="metaKeywords">Meta Keywords:</label><span class="red"> *</span><br>

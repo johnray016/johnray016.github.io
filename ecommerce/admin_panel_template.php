@@ -83,10 +83,12 @@ require 'connection.php';
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </div><!-- /.navbar -->
-
-    <?php ml_admin(); ?>
-
-    
+    <div class="admin-main">
+      <?php ml_admin(); ?>
+    </div>
+    <div class="admin-footer">
+      <p class="admin-page-footer text-center">© Manila Outdoors. 2018. All Rights Reserved. </p>
+    </div>
      <!-- Import Slick Slider JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
 

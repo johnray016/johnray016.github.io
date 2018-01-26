@@ -9,6 +9,7 @@ function meta_keywords(){
 	echo "Manila Outdoors, hiking equipment, camping gears, outdoor gear";
 }
 function display_content(){
+	require 'connection.php'
 	?>
 	
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -76,30 +77,24 @@ function display_content(){
 		<div class="featured-products">
 			<h3>LATEST PRODUCTS</h3>
 			<div class="featured-product-container">
-				<div class="featured-product1 text-center">
-					<img src="assets/img/products/Osprey_Daylite_Plus_20L_Travel_Pack_Beryl_Blue_1.jpg" alt="" class="img-responsive">
-					<h4>Osprey Daylite Plus 20L Travel Pack Beryl Blue</h4>
-					<span>&#8369; 5000.00</span><br>
-					<button class='btn btn-success'>View Details</button>
-				</div>
-				<div class="featured-product2 text-center">
-					<img src="assets/img/products/Vargo_Titanium_Spoon_Fork_Knife_Set_1.jpg" alt="" class="img-responsive">
-					<h4>Vargo Titanium Spoon / Fork / Knife Set</h4>			
-					<span>&#8369; 300.00</span><br>
-					<button class='btn btn-success'>View Details</button>
-				</div>
-				<div class="featured-product3 text-center">
-					<img src="assets/img/products/Ticket_to_the_moon_Double_Hammock_Turquoise_Green_1.jpg" alt="" class="img-responsive">	
-					<h4>Ticket to the moon Double Hammock Turquoise / Green</h4>		
-					<span>&#8369; 2100.00</span><br>
-					<button class='btn btn-success'>View Details</button>		
-				</div>
-				<div class="featured-product4 text-center">
-					<img src="assets/img/products/Craghoppers_Kimba_Lite_Mens_Jacket_Royal_Navy_1.jpg" alt="" class="img-responsive">	
-					<h4>Craghoppers Kimba Lite Men's Jacket - Royal Navy</h4>	
-					<span>&#8369; 1300.00</span><br>
-					<button class='btn btn-success'>View Details</button>		
-				</div>
+
+				<?php 
+				// Display the 4 LATEST IN STOCK PRODUCTS
+				$sql = "SELECT * FROM products WHERE quantity !=0 ORDER BY product_ID DESC LIMIT 4";
+     			$result = mysqli_query($conn, $sql);
+     			while($products = mysqli_fetch_assoc($result) ) {
+	            extract($products);
+	            $index = $product_ID;
+					echo "
+					<div class='featured-product text-center'>
+						<img src='$image' class='img-responsive'>
+						<h4>$product_name</h4>
+						<span>&#8369; ".number_format($price)."</span><br>
+						<a href='product.php?index=$index&product_name=$product_name'><button class='btn btn-success'>View Details</button></a>
+					</div>";
+					}
+				?>
+				
 			</div>
 		</div>
 
