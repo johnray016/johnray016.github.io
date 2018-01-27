@@ -99,7 +99,7 @@ function display_content(){
 		</div>
 
 		<div class="brand_logos">
-			<h3>OUR BRANDS</h3>
+			<h3>BRANDS WE LOVE</h3>
    			<section class="brands slider">
 				<div>
 			      <img src="assets/img/brands/ferrino_logo.png" alt="Ferrino Logo">

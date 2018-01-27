@@ -138,16 +138,16 @@ function display_content(){
 
 		// Form will not submit if there are EMPTY required fields
 		function validateRegistration() {
-			username = $('#username').val();
-			password = $('#password').val();
-			confirmPassword = $('#confirmPassword').val();
-			firstName = $('#firstName').val();
-			lastName = $('#lastName').val();
-			email = $('#email').val();
-			streetAddress = $('#streetAddress').val();
-			barangay = $('#barangay').val();
-			city = $('#city').val();
-			province = $('#province').val();
+			let username = $('#username').val();
+			let password = $('#password').val();
+			let confirmPassword = $('#confirmPassword').val();
+			let firstName = $('#firstName').val();
+			let lastName = $('#lastName').val();
+			let email = $('#email').val();
+			let streetAddress = $('#streetAddress').val();
+			let barangay = $('#barangay').val();
+			let city = $('#city').val();
+			let province = $('#province').val();
 			if (username == '' || password == '' || confirmPassword == '' || firstName == '' || lastName == '' || email == '' || streetAddress == '' || barangay == '' || city == '' || province == '' || $("#confirm_TAC").is(":not(:checked)")) {
 				$('#registration_error').css('color','red');
 				$('#registration_error').html('Please fill out required * fields.');

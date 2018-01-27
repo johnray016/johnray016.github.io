@@ -1,6 +1,6 @@
 <div class="tab-pane" id="add-products">
 	<div class="row">
-		<form method="POST" enctype='multipart/form-data' action="add_new_item.php">
+		<form method="POST" enctype='multipart/form-data' action="add_new_item.php"  onsubmit="return validateAddProduct()">
 			<div class="add-products-container">
 				<div>
 					<div class="form-group">
@@ -20,15 +20,19 @@
 				      <textarea class="form-control" id="longDescription" name="longDescription"></textarea>
 				    </div>
 				    <div class="form-group">
+				      <label for="featuresDescription">Features:</label>
+				      <textarea class="form-control" id="featuresDescription" name="featuresDescription"></textarea>
+				    </div>
+				    <div class="form-group">
 				      <label for="productPrice">Price:</label><span class="red"> *</span>
 				      <input type="number" class="form-control" id="productPrice" name="productPrice">
 				    </div>
-				    <div class="form-group">
-				      <label for="productQuantity">Quantity:</label><span class="red"> *</span>
-				      <input type="number" class="form-control" id="productQuantity" name="productQuantity">
-				    </div>
 				</div>
 				<div>
+				    <div class="form-group">
+				      <label for="productQuantity">Quantity:</label>
+				      <input type="number" class="form-control" id="productQuantity" name="productQuantity" value="0">
+				    </div>
 					<div class="form-group">
 				      <label for="img">Image:</label><span class="red"> *</span>
 				      <input type="file" class="form-control" id="img" name="img">
@@ -62,6 +66,7 @@
 				      <label for="metaKeywords">Meta Keywords:</label><span class="red"> *</span><br>
 				      <textarea class="form-control" id="metaKeywords" name="metaKeywords"></textarea>
 				    </div>
+				    <span id="add-new-item-error"></span><br>
 		   			<button type="submit" class="btn btn-warning" name="addNewItem" value="addNewItem">Submit</button>
 			    </div>
 			</div>
@@ -70,6 +75,31 @@
 </div>			
 
 <script>
+	// // Form will not submit if there are EMPTY required fields
+	// 	function validateAddProduct() {
+	// 		let productName = $('#productName').val();
+	// 		let sku = $('#sku').val();
+	// 		let shortDescription = $('#shortDescription').val();
+	// 		let longDescription = $('#longDescription').val();
+	// 		let productPrice = $('#productPrice').val();
+	// 		let img = $('#img').val();
+	// 		let metaTitle = $('#metaTitle').val();
+	// 		let metaDescription = $('#metaDescription').val();
+	// 		let metaKeywords = $('#metaKeywords').val();
+	// 		if (productName == '' || sku == '' || shortDescription == '' || longDescription == '' || productPrice == '' || img == '' || metaTitle == '' || metaDescription == '' || metaKeywords == '') {
+	// 			$('#add-new-item-error').css('color','red');
+	// 			$('#add-new-item-error').html('Please fill out required * fields.');
+	// 			$('#add-new-item-error').addClass("bg-danger");			
+	// 			return false;	
+	// 		} else {
+	// 			return true;
+	// 		}
+	// 	};
+
+
+
+
+
 	// $('#addNewItem').submit(function(e){
 	// 	e.preventDefault();
 	// 		$.ajax({

@@ -30,13 +30,13 @@ function display_content(){
 					<h4><strong>$product_name</strong></h4>
 				</div>	
 				<div class='product-image-container'>
-					<img src='$image' class='img-responsive'>
+					<img src='$image' class='img-responsive' data-toggle='modal' data-target='#imageModal'>
 				</div>
 				<div class='product-details-container'>
 					<h3>&#8369;".number_format($price)."</h3>
 					<span class='product-sku'>SKU: $sku</span><br>";
 					if ($quantity==0) {
-						echo "AVAILABILITY: <span class='availability red'> OUT OF STOCK</span><br>
+						echo "<strong>AVAILABILITY: </strong><span class='availability red'> OUT OF STOCK</span><br>
 							<p>$short_description</p>
 				</div>				
 				<div class='addToCart-container'> 	
@@ -44,8 +44,8 @@ function display_content(){
 					<hr>
 				</div>";
 					} else {
-						echo "Current Stock: <span class='orange'>$quantity</span><br>";
-						echo "AVAILABILITY: <span class='availability green'> IN STOCK</span>
+						echo "<strong>Current Stock: </strong><span class='orange'>$quantity</span><br>";
+						echo "<strong>AVAILABILITY: </strong><span class='availability green'> IN STOCK</span>
 						<p>$short_description</p>
 				</div>	
 				<div class='addToCart-container'> 	
@@ -56,6 +56,7 @@ function display_content(){
 				</div>	";
 					}					
 					echo "
+				</section>
 				<div class='product-description-container'>
 					<ul class='nav nav-tabs'>
 					    <li class='active'><a data-toggle='tab' href='#product-description-tab'>PRODUCT DESCRIPTION</a></li>
@@ -63,7 +64,14 @@ function display_content(){
 					</ul>
 				 	<div class='tab-content'>
 					    <div id='product-description-tab' class='tab-pane fade in active'>
-							<br>$long_description
+					    	<div class='row'>
+					    		<div class='long-description-container col-xs-12 col-md-6 col-sm-6 col-lg-6'>
+									$long_description
+								</div>
+								<div class='features-container  col-xs-12 col-md-6 col-sm-6 col-lg-6'>
+									$features
+								</div>
+							</div>	
 					    </div>
 					    <div id='reviews-tab' class='tab-pane fade'>
 					      <br>
@@ -71,9 +79,16 @@ function display_content(){
 					    </div>
 				    </div>
 				</div>	
-				</section>
+			</div>
+			<div id='imageModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+			  <div class='modal-dialog modal-lg'>
+			    <div class='modal-content'>
+			        <div class='modal-body'>
+			            <img src='$image'>
+			        </div>
+			    </div>
+			  </div>
 			</div>";
-
 }
 
 require "template.php"

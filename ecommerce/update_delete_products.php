@@ -31,7 +31,7 @@
                           <td>$sku</td>
                           <td>$price</td>
                           <td>$quantity</td>
-                          <td><button class='btn btn-primary'>View</button></td>
+                          <td><a href='product.php?index=$index&product_name=$product_name' target='_blank'><button class='btn btn-primary'>View</button></a></td>
                           <td><button class='btn btn-success edit_modal' data-toggle='modal' data-target='#editModal' data-index='$index'>Edit</button></td>
                           <td><button class='btn btn-danger delete_modal' data-toggle='modal' data-target='#deleteModal' data-index='$index'>Delete</button></td>
                         </tr>";

@@ -73,7 +73,7 @@ require 'connection.php';
                 ?>   
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
+                <li><a href="#">Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="admin_logout.php">Logout</a></li>
               </ul>

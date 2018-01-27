@@ -16,6 +16,10 @@
                 <li>WORKING DAYS/HOURS</li>
                 <li class="light-grey">Mon - Fri / 8:30AM - 7:00PM</li>
               </ul>
+              <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> </a>
+              <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i> </a>
+              <a href="#"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i> </a>
+              <a href="#"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i> </a>
           </div>
           <div class="newsletter">
               <h3>BE THE FIRST TO KNOW</h3>
