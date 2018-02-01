@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2018 at 02:19 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Feb 01, 2018 at 07:29 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -119,16 +117,56 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `username`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `order_qty` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL,
+  `invoice_number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `product_id`, `order_qty`, `payment_id`, `invoice_number`) VALUES
+(5, 28, 1, 4, 100007),
+(16, 20, 1, 4, 100012),
+(17, 10, 4, 4, 100012),
+(18, 63, 5, 4, 100012),
+(19, 24, 4, 4, 100012),
+(20, 42, 7, 4, 100012);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `order_details`
 --
 
 CREATE TABLE `order_details` (
   `invoice_number` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `total` decimal(65,2) NOT NULL,
   `date_ordered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `payment_id` int(11) NOT NULL,
-  `customers_id` int(11) NOT NULL
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`invoice_number`, `customer_id`, `total`, `date_ordered`, `status`) VALUES
+(100005, 2, '0.00', '2018-02-01 06:08:16', 'PENDING'),
+(100006, 2, '0.00', '2018-02-01 06:12:25', 'PENDING'),
+(100007, 2, '0.00', '2018-02-01 06:13:08', 'PENDING'),
+(100008, 1, '30900.00', '2018-02-01 06:17:38', 'PENDING'),
+(100009, 1, '30900.00', '2018-02-01 06:23:22', 'PENDING'),
+(100010, 1, '30900.00', '2018-02-01 06:26:05', 'PENDING'),
+(100011, 1, '30900.00', '2018-02-01 06:27:06', 'PENDING'),
+(100012, 1, '75000.00', '2018-02-01 06:28:20', 'PENDING');
 
 -- --------------------------------------------------------
 
@@ -271,13 +309,20 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `invoice_number` (`invoice_number`),
+  ADD KEY `payment_id` (`payment_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `order_details`
 --
 ALTER TABLE `order_details`
   ADD PRIMARY KEY (`invoice_number`),
-  ADD KEY `payment_id` (`payment_id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `customers_id` (`customers_id`);
+  ADD KEY `customer_id` (`customer_id`);
 
 --
 -- Indexes for table `payment_details`
@@ -302,62 +347,65 @@ ALTER TABLE `products`
 --
 ALTER TABLE `admin_accounts`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100013;
 --
 -- AUTO_INCREMENT for table `payment_details`
 --
 ALTER TABLE `payment_details`
   MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
-
+  MODIFY `product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `invoice_number` FOREIGN KEY (`invoice_number`) REFERENCES `order_details` (`invoice_number`),
+  ADD CONSTRAINT `payment_id` FOREIGN KEY (`payment_id`) REFERENCES `payment_details` (`payment_id`),
+  ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_ID`);
+
+--
 -- Constraints for table `order_details`
 --
 ALTER TABLE `order_details`
-  ADD CONSTRAINT `customers_id` FOREIGN KEY (`customers_id`) REFERENCES `customers` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `payment_id` FOREIGN KEY (`payment_id`) REFERENCES `payment_details` (`payment_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `category` FOREIGN KEY (`category_ID`) REFERENCES `categories` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-COMMIT;
+  ADD CONSTRAINT `brand_product` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `category_product` FOREIGN KEY (`category_ID`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

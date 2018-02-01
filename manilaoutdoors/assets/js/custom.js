@@ -80,6 +80,19 @@ $(document).ready(function(){
 		})
 	})
 
+	//Validate Checkout
+	$("#validateCheckout").submit(function(e){
+			e.preventDefault();
+			alert(if (paymentDetails == '0' ))
+			// let paymentDetails = $('#paymentDetails').val();
+			// if (paymentDetails == '0' ) {
+			// 	$('#paymentError').addClass('alert alert-danger');			
+			// 	$('#paymentError').html('Select Payment Details');	
+			// 	return false;	
+			// } else {
+			// 	return true;
+			// }
+		};
 
 	
 })

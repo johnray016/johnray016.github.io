@@ -8,10 +8,10 @@ if(isset($_POST['login'])){
 
 	$sql = "SELECT * FROM customers WHERE username = '$username' AND password = '$password'";
 	$result = mysqli_query($conn,$sql); 
-	
 
 	if(mysqli_num_rows($result)>0){
-		$row = mysqli_fetch_assoc($result);
+		$row = mysqli_fetch_assoc($result);		
+		extract($row);
 		$_SESSION['username'] = $username;
 		header('location: index');
 	} else {

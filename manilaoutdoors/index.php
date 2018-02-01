@@ -69,7 +69,6 @@ function display_content(){
 		
 	<div class="container">
 		<h1 class="text-center">At Manila Outdoors,<br><small>we think getting ‘out there’ is even better together.</small></h1>
-		<div class="text-center"><a href="shop-all"><button class="btn btn-warning btn-lg">Shop Products</button></a></div>
 		<div class="mini-banner">
 			<img src="assets/img/free-shipping.jpg" alt="" class="img-responsive">
 			<img src="assets/img/tents-discount.jpg" alt="" class="img-responsive">

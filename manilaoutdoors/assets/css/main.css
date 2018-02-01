@@ -148,12 +148,12 @@ ul.menu{
 }
 
 ul.menu a,
-i.fa-shopping-bag {
+i.fa-shopping-cart {
 	color: #fff;
 }
 ul.menu a:hover,
 ul.nav-button a:hover,
-i.fa-shopping-bag:hover {
+i.fa-shopping-cart:hover {
 	color: #eb9532; /* Orange */
 }
 
@@ -164,15 +164,25 @@ ul.nav-button {
 	font-size: 14px;
 	font-weight: 700;
 }
-
-i.fa-shopping-bag,
-i.fa-bars {
-	font-size: 1.5em;
-	cursor: pointer;
+span.login-text:hover {
+	color: #eb9532; /* Orange */
 }
 
-
-
+i.fa-shopping-cart,
+i.fa-bars {
+	font-size: 2em;
+	cursor: pointer;
+}
+i.fa-shopping-cart {
+	position: relative;
+}
+i.fa-shopping-cart span.badge {
+	position: absolute;
+	right: 1px;
+	background: #0097d9; /* Blue */
+	padding: 2px 5px;
+	top: -4px;
+}
 #mySideNav{
 	font-family: 'Nunito', sans-serif;
 	font-weight: 400;
@@ -904,6 +914,35 @@ div.order-details {
 div.shop-products {
 	margin-top: 2em;
 }
+div.shop-products a {
+	color: #231f20; /* Black */
+}
+div.shop-products h4.productName {
+	font-weight: 700;
+	font-size: 17px;
+}
+section#shop-all {
+	font-family: 'Nunito', sans-serif;
+}
+
+section#shop-all div.col-sm-9 div.col-sm-4 {
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	background-color: #fff;
+	border: 0 solid #f0f0f0;
+	border-radius: 6px;
+	padding: 0 1em;
+	margin: 1em;
+	box-sizing: border-box;
+	width: 30%;
+	height: 380px;
+}
+section#shop-all div.col-sm-9 div.col-sm-4:hover {
+	transform: scale(1.04);	
+	box-shadow: 0 1px 100px 10px rgba(0,0,0,.1);
+}
+section#shop-all div.col-sm-9 div.col-sm-4 span.price {
+	font-size: 1.3em;
+}
 /*********************
 * checkout.php
 *********************/
@@ -1137,7 +1176,7 @@ p {
 		font-size: 1.2em;
 	}
 
-	i.fa-shopping-bag {
+	i.fa-shopping-cart {
 		font-size: 2em;
 		padding-left: 10px;
 		padding-right: 10px;
@@ -1145,6 +1184,13 @@ p {
 
 	i.fa-bars {
 		display: none;
+	}
+	i.fa-shopping-cart span.badge {
+	position: absolute;
+	right: 11px;
+	background: #0097d9; /* Blue */
+	padding: 2px 5px;
+	top: -3px;
 	}
 
 

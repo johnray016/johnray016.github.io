@@ -2,19 +2,25 @@
 	
 	require 'connection.php';
 	session_start();
-	$username = $_SESSION['username'];
-	$productsOrdered = array();
-	foreach ($_SESSION['cart'] as $index) {
-		$products [] = $index;
+	if (isset($_SESSION['username'])) {
+	    $username = $_SESSION['username'];
+	    $sql = "SELECT * FROM customers WHERE username = '$username'";
+	    $result = mysqli_query($conn, $sql);
+	    $row = mysqli_fetch_assoc($result);		
+		extract($row);
 	}
-	$payment_id = $_POST['payment_id'];
-	$orderQuantity = $_POST['orderQuantity'];
-	$date = date("Y-m-d H:i:s");
-	
-	
 
-	$sql = "INSERT INTO order_details (product_id, date_ordered, quantity_ordered, payment_id, customers_id) VALUES ('$productsOrdered','$date', '$orderQuantity', '$payment_id',(SELECT * FROM customers WHERE customers.id = $username))";
-	mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$payment_id = $_POST['payment_id'];	
+	$totalPrice = $_POST['totalPrice'];
+	$customerID = $id;
+	mysqli_query($conn, "INSERT INTO order_details (customer_id, status, total) VALUES ($customerID, 'PENDING', $totalPrice)");
+	$invoice = mysqli_insert_id($conn);
 
-	header('location: index');
+	foreach ($_SESSION['cart'] as $index => $orderQuantity) {	
+		$sql = "INSERT INTO orders (product_id, order_qty, payment_id, invoice_number)
+		VALUES ('$index', '$orderQuantity', '$payment_id', '$invoice')";
+		mysqli_query($conn, $sql) or die (mysqli_error($conn));
+	}
+	
+	unset($_SESSION['cart']);	
 ?>

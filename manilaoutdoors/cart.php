@@ -105,7 +105,7 @@ function display_content(){
 			<div id='cart-empty'>
 				<div class='text-center'>
 				<h3>There are no items in your cart.</h3>
-				 <a href='shop-all'><button class='btn btn-warning'>SHOP ITEMS</button>
+				 <a href='shop_all.php?category=Apparel'><button class='btn btn-warning'>SHOP ITEMS</button>
 				</div>
 			</div>	
 		</div>	

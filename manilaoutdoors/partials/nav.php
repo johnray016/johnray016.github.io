@@ -53,7 +53,24 @@ require 'connection.php';
               </li>' ;
             ?>            
           </ul>              
-          <a href="cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+          <a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true">
+            <?php 
+                 
+                 if(isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+                    $totalquantity = 0;
+                    foreach($_SESSION['cart'] AS $index => $orderQuantity) {
+                        $totalquantity = $totalquantity + $orderQuantity;
+                      }
+                    if ($totalquantity > 0) {
+                      echo "<span class='badge'><strong>$totalquantity</strong></span>";
+                    } else {
+                      echo "<span><strong></strong></span>";   
+                    } 
+                }
+            ?>   
+                   
+            
+          </i></a>
         </div>
         <div id="mySidemenu" class="sidemenu">
           <a href="javascript:void(0)" class="close" onclick="closeMenu()">
@@ -74,12 +91,15 @@ require 'connection.php';
 
             <ul id="mySideNav">              
                 <a href="index.php"><li>HOME</li></a>
-                <a href="#"><li>APPAREL</li></a>
-                <a href="#"><li>BACKPACK</li></a>
-                <a href="#"><li>TENTS</li></a>
-                <a href="#"><li>HIKING GEARS</li></a>
-                <a href="#"><li>HAMMOCKS</li></a>
-                <a href="#"><li>SLEEPING GEARS</li></a>
+
+                <?php
+                $sql = "SELECT * FROM categories";
+                $result = mysqli_query($conn, $sql);
+                while($categories = mysqli_fetch_assoc($result)) {
+                extract($categories);
+                echo "<a href='shop-all.php?category=$category_name'><li>".strtoupper($category_name)."</li></a>";                
+                    }
+                ?>
             </ul>
             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</a>
             <br>  
@@ -93,12 +113,14 @@ require 'connection.php';
         <div class="nav-bottom-container">
             <ul class="menu">              
                 <a href="index"><li>HOME</li></a>
-                <a href="#" target="_blank"><li>APPAREL</li></a>
-                <a href="#" target="_blank"><li>BACKPACK</li></a>
-                <a href="#" target="_blank"><li>TENTS</li></a>
-                <a href="#" target="_blank"><li>HIKING GEARS</li></a>
-                <a href="#" target="_blank"><li>HAMMOCKS</li></a>
-                <a href="#" target="_blank"><li>SLEEPING GEARS</li></a>
+               <?php
+                $sql = "SELECT * FROM categories";
+                $result = mysqli_query($conn, $sql);
+                while($categories = mysqli_fetch_assoc($result)) {
+                extract($categories);
+                echo "<a href='shop_all.php?category=$category_name'><li>".strtoupper($category_name)."</li></a>";                
+                    }
+                ?>
             </ul>
             <i class="fa fa-bars" aria-hidden="true" onclick="openMenu()"></i>            
         </div>
