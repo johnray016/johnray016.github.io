@@ -6,7 +6,7 @@ if(isset($_POST['login'])){
 	$username = $_POST['username']; 
 	$password = sha1($_POST['password']); 
 
-	$sql = "SELECT * FROM customers WHERE username = '$username' AND password = '$password'";
+	$sql = "SELECT * FROM customers WHERE username = '$username' AND password = '$password' AND status = 'active'";
 	$result = mysqli_query($conn,$sql); 
 
 	if(mysqli_num_rows($result)>0){
@@ -40,6 +40,7 @@ if(isset($_POST['adminLogin'])){
 	if(mysqli_num_rows($result)>0){
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['admin_username'] = $username;
+		$_SESSION['role'] = $row['role'];
 		header('location: admin-panel');
 	} else {
 		header('location: admin-login');

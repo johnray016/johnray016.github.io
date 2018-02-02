@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2018 at 07:29 AM
+-- Generation Time: Feb 02, 2018 at 07:45 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -29,15 +29,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin_accounts` (
   `admin_id` int(11) NOT NULL,
   `admin_username` varchar(255) NOT NULL,
-  `admin_password` varchar(255) NOT NULL
+  `admin_password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin_accounts`
 --
 
-INSERT INTO `admin_accounts` (`admin_id`, `admin_username`, `admin_password`) VALUES
-(1, 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+INSERT INTO `admin_accounts` (`admin_id`, `admin_username`, `admin_password`, `role`) VALUES
+(1, 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'owner'),
+(2, 'staff', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'staff'),
+(3, 'staff2', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'staff');
 
 -- --------------------------------------------------------
 
@@ -103,6 +106,7 @@ CREATE TABLE `customers` (
   `city` varchar(255) NOT NULL,
   `province` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   `contact_number` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -110,9 +114,11 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `street_address`, `barangay`, `city`, `province`, `country`, `contact_number`) VALUES
-(1, 'John Ray', 'Pantaleon', 'john@example.com', 'johnray016', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '744 Tantiongco St.', 'San Guillermo', 'Morong', 'Rizal', 'Philippines', '09353137125'),
-(2, 'Juan', 'Dela Cruz', 'example@yahoo.com', 'user1', 'f0578f1e7174b1a41c4ea8c6e17f7a8a3b88c92a', '733 Tantiongco St. ', 'San Guillermo', 'Morong', 'Rizal', 'Philippines', '0123456789');
+INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `street_address`, `barangay`, `city`, `province`, `country`, `status`, `contact_number`) VALUES
+(1, 'John Ray', 'Pantaleon', 'john@example.com', 'johnray016', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '744 Tantiongco St.', 'San Guillermo', 'Morong', 'Rizal', 'Philippines', 'active', '09353137125'),
+(2, 'Juan', 'Dela Cruz', 'example@yahoo.com', 'user1', 'f0578f1e7174b1a41c4ea8c6e17f7a8a3b88c92a', '733 Tantiongco St. ', 'San Guillermo', 'Morong', 'Rizal', 'Philippines', 'active', '0123456789'),
+(3, 'Pedro', 'Penduko', 'pedropenduko@gmail.com', 'pedro', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '222 Maligaya. St', 'San Jose', 'Antipolo', 'Rizal', 'Philippines', 'active', '0123456789'),
+(4, 'Maria', 'Ligaya', 'marie@hotmail.com', 'Maria', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '233 R. Mata St.', 'May-iba', 'Teresa', 'Rizal', 'Philippines', 'active', '09201459837');
 
 -- --------------------------------------------------------
 
@@ -133,12 +139,26 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `product_id`, `order_qty`, `payment_id`, `invoice_number`) VALUES
-(5, 28, 1, 4, 100007),
-(16, 20, 1, 4, 100012),
-(17, 10, 4, 4, 100012),
-(18, 63, 5, 4, 100012),
-(19, 24, 4, 4, 100012),
-(20, 42, 7, 4, 100012);
+(63, 50, 2, 2, 10000000),
+(64, 10, 1, 2, 10000000),
+(65, 44, 3, 2, 10000000),
+(66, 39, 2, 3, 10000001),
+(67, 10, 1, 3, 10000001),
+(68, 56, 1, 3, 10000001),
+(69, 49, 2, 3, 10000001),
+(70, 64, 2, 1, 10000002),
+(71, 10, 5, 1, 10000002),
+(72, 33, 1, 4, 10000003),
+(73, 52, 1, 4, 10000003),
+(74, 17, 2, 4, 10000003),
+(75, 62, 1, 1, 10000004),
+(76, 26, 4, 1, 10000004),
+(77, 1, 2, 1, 10000004),
+(78, 28, 1, 2, 10000005),
+(79, 10, 2, 2, 10000006),
+(80, 36, 1, 2, 10000006),
+(81, 45, 3, 2, 10000006),
+(82, 49, 1, 2, 10000006);
 
 -- --------------------------------------------------------
 
@@ -151,22 +171,21 @@ CREATE TABLE `order_details` (
   `customer_id` int(11) NOT NULL,
   `total` decimal(65,2) NOT NULL,
   `date_ordered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` varchar(255) NOT NULL
+  `order_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_details`
 --
 
-INSERT INTO `order_details` (`invoice_number`, `customer_id`, `total`, `date_ordered`, `status`) VALUES
-(100005, 2, '0.00', '2018-02-01 06:08:16', 'PENDING'),
-(100006, 2, '0.00', '2018-02-01 06:12:25', 'PENDING'),
-(100007, 2, '0.00', '2018-02-01 06:13:08', 'PENDING'),
-(100008, 1, '30900.00', '2018-02-01 06:17:38', 'PENDING'),
-(100009, 1, '30900.00', '2018-02-01 06:23:22', 'PENDING'),
-(100010, 1, '30900.00', '2018-02-01 06:26:05', 'PENDING'),
-(100011, 1, '30900.00', '2018-02-01 06:27:06', 'PENDING'),
-(100012, 1, '75000.00', '2018-02-01 06:28:20', 'PENDING');
+INSERT INTO `order_details` (`invoice_number`, `customer_id`, `total`, `date_ordered`, `order_status`) VALUES
+(10000000, 1, '12900.00', '2018-02-01 12:23:38', 'COMPLETED'),
+(10000001, 2, '28500.00', '2018-02-01 12:24:34', 'COMPLETED'),
+(10000002, 1, '37300.00', '2018-02-02 01:23:58', 'COMPLETED'),
+(10000003, 3, '29960.00', '2018-02-02 02:22:43', 'PENDING'),
+(10000004, 3, '30300.00', '2018-02-02 04:05:55', 'PENDING'),
+(10000005, 3, '3400.00', '2018-02-02 04:40:23', 'PENDING'),
+(10000006, 4, '45300.00', '2018-02-02 05:42:10', 'PENDING');
 
 -- --------------------------------------------------------
 
@@ -346,7 +365,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `admin_accounts`
 --
 ALTER TABLE `admin_accounts`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `brands`
 --
@@ -361,17 +380,17 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100013;
+  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000007;
 --
 -- AUTO_INCREMENT for table `payment_details`
 --
@@ -404,8 +423,8 @@ ALTER TABLE `order_details`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `brand_product` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `category_product` FOREIGN KEY (`category_ID`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `brand_id` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `category_id` FOREIGN KEY (`category_ID`) REFERENCES `categories` (`id`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

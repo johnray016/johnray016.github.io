@@ -24,7 +24,7 @@ if(isset($_POST['totalPrice'])){
 	<section class="checkout">
 		<div class="container">
 			<h3 class="text-center">CHECKOUT</h3>
-			<form method="post" action="order_endpoint.php" id="validateCheckout">
+			<form method="post" action="order_endpoint.php" id="validateCheckout" >
 				<div class="shipping-details">
 					<div class="panel panel-default">
 				      <div class="panel-heading"><h4><strong>Order Details</strong></h4></div>
@@ -53,18 +53,16 @@ if(isset($_POST['totalPrice'])){
 								?>
 							<br>	
 							<h4 class="orange">Payment Details<span class="red"> *</span></h4>
-							<span id="paymentError"></span>
-							 <select name='paymentDetails' id="paymentDetails">
+							 <select name="paymentDetails" id="paymentMethod">
 							 	<option value="0" disabled selected>--Select Payment Method</option>
 								<?php 
 								$sql = "SELECT * FROM payment_details";
 								$result = mysqli_query($conn,$sql);
 								while($payment = mysqli_fetch_assoc($result)){
-									extract($payment);
-									echo "<option value='$payment_id'>$payment_details</option>
+								extract($payment);
+									echo "<option value='$payment_id' name='payment_id' id='payment_id'>$payment_details</option>
 									";
-								}
-								echo "<input type='hidden' value='$payment_id' name='payment_id'>";
+								}								
 								?>
 							</select>
 							<br><br>
@@ -122,28 +120,22 @@ if(isset($_POST['totalPrice'])){
 						?>
 						
 				      </div>
-			
+						<p id="paymentError"></p>			
 						<button type="submit" class="btn btn-warning">Confirm Order</button>
 				    </div>
 				</div>
 			</form>
 		</div>
 	</section>
-
+	<!-- Validate Checkout -->
 	<script type="text/javascript">
-		$("#validateCheckout").submit(function(e){
-				e.preventDefault();
-				return false;
-				alert(if (paymentDetails == '0' ))
-				// let paymentDetails = $('#paymentDetails').val();
-				// if (paymentDetails == '0' ) {
-				// 	$('#paymentError').addClass('alert alert-danger');			
-				// 	$('#paymentError').html('Select Payment Details');	
-				// 	return false;	
-				// } else {
-				// 	return true;
-				// }
-			};
+		$('#validateCheckout').submit(function(){
+			if ($('#paymentMethod option:selected').prop('disabled') == true) {
+				$('#paymentError').addClass('alert alert-danger text-center');			
+				$('#paymentError').html('Select Payment Method');
+				return false;	
+			}
+     	});
 	</script>
 
 <?php		

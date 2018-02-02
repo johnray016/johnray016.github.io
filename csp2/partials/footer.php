@@ -33,7 +33,7 @@
             <ul class="footer-ul-left light-grey">
               <li><a href="about">About Us</a></li>
               <li><a href="contact">Contact Us</a></li>
-              <li>My Account</li>
+              <li><a href="my-account">My Account</a></li>
             </ul>
             <ul class="footer-ul-right light-grey">
               <li><a href="customer-login">Login</a></li>

@@ -3,7 +3,7 @@
 require 'connection.php';
 
 
-// if(isset($_POST['addNewItem'])){
+
 	$target_dir = "assets/img/products/";
 	$target_file = $target_dir . basename($_FILES["img"]["name"]);
 	move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
@@ -28,7 +28,7 @@ require 'connection.php';
 		('$productName', '$sku', '$shortDescription', '$longDescription', '$featuresDescription', $productPrice, $productQuantity, '$image', $productCategory, $productBrand, '$metaTitle', '$metaDescription', '$metaKeywords', '$date')";
 	mysqli_query($conn,$sql) or die(mysqli_error($conn));
 	header('location: admin_panel.php');
-	// }
+
 
 
 ?>

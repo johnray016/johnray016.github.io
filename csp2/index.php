@@ -28,7 +28,7 @@ function display_content(){
 	       		<div class="banner1-caption-container">
 			       	<h2>FLASH SALE!</h2>
 				    <p class="lead">Up to 20% OFF in Backpacks</p>
-				    <button type="button" class="btn banner-button btn-lg">SHOP BACKPACKS</button> 
+				    <a href="shop_all.php?category=Backpacks"><button type="button" class="btn banner-button btn-lg">SHOP BACKPACKS</button></a> 
 			    </div>
 	       </div>  
 	    </div>
@@ -39,7 +39,7 @@ function display_content(){
 	       		<div class="banner2-caption-container">	
 			       	<h2>HIKING EQUIPMENTS</h2>
 				    <p class="lead">Innovative titanium outdoor products</p>
-				    <button type="button" class="btn banner-button btn-lg">SHOP COOKWARES</button> 
+				    <a href="shop_all.php?category=Hiking%20Gears"><button type="button" class="btn banner-button btn-lg">SHOP COOKWARES</button></a>
 			    </div>
 	       </div>  
 	    </div>
@@ -50,7 +50,7 @@ function display_content(){
 	       		<div class="banner3-caption-container">
 			       	<h2>QUALITY HAMMOCKS</h2>
 				    <p class="lead">Ticket to the Moon</p>
-				    <button type="button" class="btn banner-button btn-lg">SHOP HAMMOCKS</button> 
+				    <a href="shop_all.php?category=Hammocks"><button type="button" class="btn banner-button btn-lg">SHOP HAMMOCKS</button> </a>
 			    </div>
 	       </div>  
 	    </div>

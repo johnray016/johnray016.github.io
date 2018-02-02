@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT * FROM customers ORDER BY id DESC";
+      $sql = "SELECT * FROM customers ORDER BY id ASC";
       $result = mysqli_query($conn, $sql);
       while($customers = mysqli_fetch_assoc($result)) {
       extract($customers);
@@ -21,7 +21,13 @@
         <td>$first_name</td>
         <td>$last_name</td>
         <td>$email</td>
-        <td><button class='btn btn-danger'>Ban</button></td>
+        <td>";
+        if ($status == 'active') {
+          echo "<a href='ban_user.php?index=$id'><button class='btn btn-danger'>Ban</button></a>";
+        } else if ($status != 'active') {
+          echo "<button class='btn btn-default'>Banned</button>";
+        }
+    echo "</td>
       </tr>";
      }
       ?>

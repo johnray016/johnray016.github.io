@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
 
     <!--Import Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,500,700|Roboto+Condensed:400,700|Oswald:600|Open+Sans:400,700|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,500,700|Roboto+Condensed:400,700|Oswald:600|Open+Sans:400,700|Shadows+Into+Light|Playfair+Display" rel="stylesheet">
 
     <!--Import Fontawesome-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">

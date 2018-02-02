@@ -51,7 +51,7 @@ function display_content(){
 					      <input type="email" class="form-control" id="email" name="email">
 					    </div>
 					    <div class="form-group phone">
-					      <label for="phone">Contact Number:</label>
+					      <label for="phone">Contact Number:</label><span class="red"> *</span>
 					      <input type="text" class="form-control" id="phone" name="phone">
 					    </div>
 				    </div>
@@ -74,7 +74,7 @@ function display_content(){
 					      <input type="text" class="form-control" id="province" name="province">
 					    </div>
 					    <div class="form-group">
-					      <label for="country">Country:</label>
+					      <label for="country">Country:</label><span class="red"> *</span>
 					      <input type="text" class="form-control" id="country" name="country">
 					    </div>
 				    </div>
@@ -148,7 +148,9 @@ function display_content(){
 			let barangay = $('#barangay').val();
 			let city = $('#city').val();
 			let province = $('#province').val();
-			if (username == '' || password == '' || confirmPassword == '' || firstName == '' || lastName == '' || email == '' || streetAddress == '' || barangay == '' || city == '' || province == '' || $("#confirm_TAC").is(":not(:checked)")) {
+			let phone = $('#phone').val();
+			let country = $('#country').val();
+			if (username == '' || password == '' || confirmPassword == '' || firstName == '' || lastName == '' || email == '' || streetAddress == '' || barangay == '' || city == '' || province == '' || phone == '' || country == '' || $("#confirm_TAC").is(":not(:checked)")) {
 				$('#registration_error').css('color','red');
 				$('#registration_error').html('Please fill out required * fields.');
 				$('.registration-error-container').addClass("alert alert-danger");			

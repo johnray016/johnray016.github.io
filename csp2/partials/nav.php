@@ -19,13 +19,13 @@ require 'connection.php';
         
         <div class="nav-button-container">
           <ul class="nav-button">
-            <li><a href="#" target="_blank"><i class="fa fa-question-circle-o" aria-hidden="true"></i> CUSTOMER CARE</a></li>
+            <li><a href="customer-care" target="_blank"><i class="fa fa-question-circle-o" aria-hidden="true"></i> CUSTOMER CARE</a></li>
             <?php
               echo isset($_SESSION['username']) ?
               '<li id="my-account-toggle"><span class="my-accout"><i class="fa fa-user" aria-hidden="true"></i> MY ACCOUNT <i class="fa fa-angle-down" aria-hidden="true"></i></span>
                     <div id="myaccount-menu">
                        <ul id="myaccount-menu-box">
-                         <li><a href="">My Account</a></li>
+                         <li><a href="my-account">My Account</a></li>
                          <li><a href="">Wishlist</a></li>
                          <li><hr></li>                         
                          <li><a href="logout.php">Sign out</a></li>
@@ -90,7 +90,7 @@ require 'connection.php';
             ?>   
 
             <ul id="mySideNav">              
-                <a href="index.php"><li>HOME</li></a>
+                <a href="index"><li>HOME</li></a>
 
                 <?php
                 $sql = "SELECT * FROM categories";
@@ -101,7 +101,7 @@ require 'connection.php';
                     }
                 ?>
             </ul>
-            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</a>
+            <a href="customer-care"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CUSTOMER CARE</a>
             <br>  
 
              <?php

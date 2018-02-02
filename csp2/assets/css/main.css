@@ -692,7 +692,6 @@ div.admin-footer p {
 div.admin-main {
 	min-height: 86%;
 }
-
 /*********************
 * update_delete_products.php
 *********************/
@@ -747,7 +746,7 @@ div.add-products-container button {
 	width: 100%;
 }
 div.admin-page-body {
-	padding: 1em;
+	min-height: calc(100vh - 130px)!important;
 }
 
 /*********************
@@ -967,6 +966,35 @@ div.payment-details button {
 
 section.checkout div.container form hr{
 	margin: 10px auto;	
+}
+section.checkout p#paymentError {
+	width: 90%!important;
+	margin: 5px auto;
+}
+/*********************
+* my_account.php
+*********************/
+section#my-account h3 {
+	font-family: 'Playfair Display', serif;
+}
+section#my-account li {
+	list-style: none;
+}
+section#my-account div.update-account-container {
+	padding: 1em;
+}
+
+section#my-account input {
+	width: 100%;
+	margin-bottom: 1em;
+	padding: 0 10px;
+}
+
+/*********************
+* orders.php
+*********************/
+div.orders li {	
+	list-style: none!important;
 }
 
 /* Small Devices, Tablets */
@@ -1584,6 +1612,10 @@ p {
 		grid-template-columns: 5fr 2fr;	
 		grid-gap: 1em;
 	}
+	/*********************
+	* my_account.php
+	*********************/
+	
 }
 
 /* Large Devices, Wide Screens */

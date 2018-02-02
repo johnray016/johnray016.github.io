@@ -2,10 +2,10 @@
     require "connection.php"
     ?>
     <div class="container admin-page-body">
-          <div class="tab-content">
-          <div id="dashboard-tab" class="tab-pane fade in active">
-            <h3>HOME</h3>
-            <p>Some content. 1</p>
+          <div class="tab-content"> 
+          <div id="dashboard-tab" class="tab-pane fade">
+             <h3>Orders</h3>
+             <?php require "orders.php"; ?> 
           </div>
           <div id="categories-tab" class="tab-pane fade">
             <h3>Manage Categories</h3>
@@ -15,7 +15,7 @@
             <h3>Manage Customers</h3>
            <?php require "customers.php"; ?> 
           </div>
-          <div id="products-tab" class="tab-pane fade">
+          <div id="products-tab" class="tab-pane fade in active">
             <div class="nested-tabs">
                 <div class="tabbable tabs-left">
                 <h3>Manage Products</h3>
@@ -31,8 +31,7 @@
             </div>      
           </div>
           <div id="staff-tab" class="tab-pane fade">
-            <h3>Menu 5</h3>
-            <p>Some content in menu 5.</p>
+           <?php require "manage_staff.php"; ?> 
           </div>
         </div>  
     </div>

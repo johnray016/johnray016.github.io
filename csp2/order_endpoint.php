@@ -9,18 +9,18 @@
 	    $row = mysqli_fetch_assoc($result);		
 		extract($row);
 	}
-
-	$payment_id = $_POST['payment_id'];	
+	$paymentDetails= $_POST['paymentDetails'];	
 	$totalPrice = $_POST['totalPrice'];
 	$customerID = $id;
-	mysqli_query($conn, "INSERT INTO order_details (customer_id, status, total) VALUES ($customerID, 'PENDING', $totalPrice)");
+	mysqli_query($conn, "INSERT INTO order_details (customer_id, order_status, total) VALUES ($customerID, 'PENDING', $totalPrice)");
 	$invoice = mysqli_insert_id($conn);
 
 	foreach ($_SESSION['cart'] as $index => $orderQuantity) {	
 		$sql = "INSERT INTO orders (product_id, order_qty, payment_id, invoice_number)
-		VALUES ('$index', '$orderQuantity', '$payment_id', '$invoice')";
+		VALUES ('$index', '$orderQuantity', '$paymentDetails', '$invoice')";
 		mysqli_query($conn, $sql) or die (mysqli_error($conn));
 	}
 	
 	unset($_SESSION['cart']);	
+	header('location: my-account')
 ?>

@@ -53,11 +53,16 @@ require 'connection.php';
         </div>        
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a data-toggle="tab" href="#dashboard-tab">Orders<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a data-toggle="tab" href="#products-tab">Products<span class="sr-only">(current)</span></a></li>
             <li><a data-toggle="tab" href="#categories-tab">Categories</a></li>
-            <li><a data-toggle="tab" href="#customers-tab">Customers</a></li>
-            <li><a data-toggle="tab" href="#products-tab">Products</a></li>
-            <li><a data-toggle="tab" href="#staff-tab">Manage Staff</a></li>
+            <?php 
+              if (isset($_SESSION['admin_username']) && $_SESSION['role'] == 'owner') { 
+                   echo "<li><a data-toggle='tab' href='#dashboard-tab'>Orders</a></li>
+                    <li><a data-toggle='tab' href='#customers-tab'>Customers</a></li>
+                    <li><a data-toggle='tab' href='#staff-tab'>Manage Staff</a></li>";
+               }  
+            ?>
+            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">

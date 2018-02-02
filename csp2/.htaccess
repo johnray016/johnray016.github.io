@@ -14,6 +14,8 @@ RewriteRule ^admin-login admin_login.php
 RewriteRule ^cart cart.php
 RewriteRule ^shop-all shop_all.php
 RewriteRule ^checkout checkout.php
+RewriteRule ^customer-care customer_care.php
+RewriteRule ^my-account my_account.php
 
 RewriteRule ^products/([0-9]+)/([0-9a-z-]+) product.php?index=$index&product_name=$product_name [NC,L]
 
